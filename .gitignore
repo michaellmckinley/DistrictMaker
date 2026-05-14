@@ -1,0 +1,46 @@
+# Data — regenerable, large (several GB of TIGER cache)
+# Anchored to repo root so it doesn't shadow src/districtmaker/data/
+/data/
+
+# Outputs are tracked, but exclude debug logs and editor cruft
+/outputs/.DS_Store
+/outputs/*-refit*.log
+/outputs/validate-*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Per-experiment geojson/shapefile are local-only (written by `compare
+# --full-artifacts` / `validate --full-artifacts`). The committed record
+# is: per-experiment png+metrics+log, plus the leader's full bundle at
+# the state root.
+outputs/*/experiments/*/districts.geojson
+outputs/*/experiments/*/districts.shp
+outputs/*/experiments/*/districts.shx
+outputs/*/experiments/*/districts.dbf
+outputs/*/experiments/*/districts.prj
+outputs/*/experiments/*/districts.cpg

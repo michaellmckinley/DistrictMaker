@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-13T15:27:05.445744+00:00
+state KY (Kentucky)
+algorithm splitline+kl
+districts 6
+seed 42
+runtime_seconds 159.321
+git_commit 8ed2cc0
+max_abs_deviation_pct 0.075191
+total_internal_boundary_km 1024.406074

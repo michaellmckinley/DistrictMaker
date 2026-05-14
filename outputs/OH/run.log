@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-13T17:23:38.783081+00:00
+state OH (Ohio)
+algorithm splitline+kl
+districts 15
+seed 42
+runtime_seconds 624.313
+git_commit 8ed2cc0
+max_abs_deviation_pct 0.389272
+total_internal_boundary_km 2268.960215

@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-13T14:54:29.582586+00:00
+state CA (California)
+algorithm splitline+kl
+districts 52
+seed 42
+runtime_seconds 3059.620
+git_commit 6f05a54
+max_abs_deviation_pct 0.498396
+total_internal_boundary_km 7323.702403

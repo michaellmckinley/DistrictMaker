@@ -1,0 +1,42 @@
+{
+  "state": "HI",
+  "state_name": "Hawaii",
+  "algorithm": "splitline+kl",
+  "districts": 2,
+  "total_internal_boundary_km": 46.96939525464217,
+  "population": {
+    "ideal": 727635.5,
+    "per_district": [
+      727410,
+      727861
+    ],
+    "deviations_pct": [
+      -0.03099079140586186,
+      0.03099079140586186
+    ],
+    "max_abs_deviation_pct": 0.03099079140586186,
+    "range_pct": 0.06198158281172372
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.1634737698365327,
+      0.08163593326892708
+    ],
+    "reock": [
+      0.16799139513786215,
+      0.002085049828152531
+    ],
+    "schwartzberg": [
+      2.4732952364120773,
+      3.499929682666516
+    ],
+    "convex_hull_ratio": [
+      0.5034488556844188,
+      0.027109525254599833
+    ]
+  },
+  "runtime_seconds": 6.98914999992121,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-13T16:14:10.471438+00:00"
+}

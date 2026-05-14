@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "districtmaker"
+version = "0.1.0"
+description = "Algorithmic Congressional redistricting from pure geometry."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { file = "LICENSE" }
+authors = [{ name = "Michael McKinley" }]
+keywords = ["redistricting", "gerrymandering", "geospatial", "census"]
+
+dependencies = [
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pygris>=0.1.6",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "networkx>=3.2",
+    "matplotlib>=3.8",
+    "click>=8.1",
+    "pyarrow>=15.0",
+    "pymetis>=2025.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.scripts]
+districtmaker = "districtmaker.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -m 'not network'"
+markers = [
+    "network: hits real Census endpoints; run explicitly with `pytest -m network`",
+]

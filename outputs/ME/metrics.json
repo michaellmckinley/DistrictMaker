@@ -1,0 +1,42 @@
+{
+  "state": "ME",
+  "state_name": "Maine",
+  "algorithm": "splitline+kl",
+  "districts": 2,
+  "total_internal_boundary_km": 250.56015620575934,
+  "population": {
+    "ideal": 681179.5,
+    "per_district": [
+      680066,
+      682293
+    ],
+    "deviations_pct": [
+      -0.16346645781324892,
+      0.16346645781324892
+    ],
+    "max_abs_deviation_pct": 0.16346645781324892,
+    "range_pct": 0.32693291562649784
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.3793005087773634,
+      0.30904784453924933
+    ],
+    "reock": [
+      0.5922848100116102,
+      0.3616088001649611
+    ],
+    "schwartzberg": [
+      1.6237093344407445,
+      1.7988176513017098
+    ],
+    "convex_hull_ratio": [
+      0.8844168849399237,
+      0.8003196392809753
+    ]
+  },
+  "runtime_seconds": 31.770449874922633,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-13T16:14:43.166708+00:00"
+}
