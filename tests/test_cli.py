@@ -217,3 +217,77 @@ def test_cli_compare_exits_nonzero_when_no_leader(tmp_path):
         )
     assert result.exit_code != 0
     assert "No experiment succeeded" in result.output
+
+
+# --- validate-ctl ---------------------------------------------------------------
+
+
+def test_validate_ctl_set_cpu_writes_control_file(tmp_path):
+    from districtmaker.scheduler import SchedulerState, write_state, read_state
+    write_state(tmp_path, SchedulerState(target_cpu_pct=50.0))
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli, ["validate-ctl", "set-cpu", "--pct", "75", "--output", str(tmp_path)],
+        catch_exceptions=False,
+    )
+    assert result.exit_code == 0, result.output
+    assert read_state(tmp_path).target_cpu_pct == 75.0
+
+
+def test_validate_ctl_pause_and_resume_toggle_flags(tmp_path):
+    from districtmaker.scheduler import SchedulerState, write_state, read_state
+    write_state(tmp_path, SchedulerState())
+
+    runner = CliRunner()
+    runner.invoke(cli, ["validate-ctl", "pause", "--output", str(tmp_path)])
+    assert read_state(tmp_path).paused is True
+
+    runner.invoke(cli, ["validate-ctl", "resume", "--output", str(tmp_path)])
+    s = read_state(tmp_path)
+    assert s.paused is False
+    assert s.freeze is False
+
+
+def test_validate_ctl_status_reads_control_file(tmp_path):
+    from districtmaker.scheduler import SchedulerState, write_state
+    write_state(tmp_path, SchedulerState(
+        target_cpu_pct=42.0, max_workers=3, pid=1234, started_at="2026-05-15T18:00:00",
+    ))
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli, ["validate-ctl", "status", "--output", str(tmp_path)],
+        catch_exceptions=False,
+    )
+    assert result.exit_code == 0, result.output
+    assert "target_cpu_pct: 42.0" in result.output
+    assert "max_workers:    3" in result.output
+
+
+def test_validate_ctl_freeze_sets_flag_and_resume_clears_it(tmp_path):
+    from districtmaker.scheduler import SchedulerState, write_state, read_state
+    write_state(tmp_path, SchedulerState())
+
+    runner = CliRunner()
+    runner.invoke(cli, ["validate-ctl", "freeze", "--output", str(tmp_path)])
+    assert read_state(tmp_path).freeze is True
+
+    runner.invoke(cli, ["validate-ctl", "resume", "--output", str(tmp_path)])
+    s = read_state(tmp_path)
+    assert s.freeze is False
+    assert s.paused is False
+
+
+def test_validate_ctl_set_max_workers_unlimited_clears_ceiling(tmp_path):
+    from districtmaker.scheduler import SchedulerState, write_state, read_state
+    write_state(tmp_path, SchedulerState(max_workers=4))
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli,
+        ["validate-ctl", "set-max-workers", "--unlimited", "--output", str(tmp_path)],
+        catch_exceptions=False,
+    )
+    assert result.exit_code == 0, result.output
+    assert read_state(tmp_path).max_workers is None

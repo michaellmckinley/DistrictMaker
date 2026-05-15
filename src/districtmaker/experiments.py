@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from districtmaker.apportionment import districts_for_state
-from districtmaker.compare import AlgoResult, run_all
+from districtmaker.compare import AlgoResult, run_all, run_one_algorithm
 from districtmaker.data.adjacency import get_adjacency
 from districtmaker.data.loader import load_state
 from districtmaker.output.writer import (
@@ -264,6 +264,177 @@ def _render_leader_md(report: LeaderReport, state_info: dict) -> str:
         )
     lines.append("")
     return "\n".join(lines) + "\n"
+
+
+def run_single_algorithm_task(
+    state_code: str,
+    algorithm: str,
+    state_output_dir: Path,
+    *,
+    seed: int = 42,
+    angle_steps: int = 180,
+    tolerance: float = 0.005,
+    full_artifacts: bool = False,
+    n_districts: int | None = None,
+    state_loader=load_state,
+    adjacency_loader=get_adjacency,
+    log: logging.Logger | None = None,
+) -> AlgoResult:
+    """Run exactly one (state, algorithm) task and write its experiment dir.
+
+    Used by the parallel runner as the worker entry point. Each task is
+    self-contained: it loads the state, builds adjacency, runs the named
+    algorithm, and writes `state_output_dir/experiments/<algorithm>/`. The
+    finalization step (separate task) reads each experiment's metrics and
+    computes the per-state leader.
+
+    `state_loader` and `adjacency_loader` are injected for testability;
+    production callers use the defaults (real Census loaders).
+    """
+    if log is None:
+        log = get_logger()
+    state_code = state_code.upper()
+    state_output_dir = Path(state_output_dir)
+
+    state = state_loader(state_code)
+    n = n_districts if n_districts is not None else districts_for_state(state_code)
+    edges, lengths = adjacency_loader(state.code, state.blocks)
+
+    log.info("[%s/%s] running…", state_code, algorithm)
+    result = run_one_algorithm(
+        algorithm,
+        state.geometry,
+        state.blocks,
+        n_districts=n,
+        edges=edges,
+        edge_lengths=lengths,
+        seed=seed,
+        angle_steps=angle_steps,
+        tolerance=tolerance,
+    )
+
+    exp_dir = state_output_dir / "experiments" / algorithm
+    exp_dir.mkdir(parents=True, exist_ok=True)
+    state_info = {
+        "code": state.code,
+        "name": state.name,
+        "fips": state.fips,
+        "n_districts": n,
+        "block_count": state.block_count,
+        "total_population": state.total_population,
+    }
+    if result.succeeded:
+        info = RunInfo(
+            state_code=state_info["code"],
+            state_name=state_info["name"],
+            algorithm=result.name,
+            seed=seed,
+            runtime_seconds=result.runtime_seconds,
+            git_commit=current_git_commit(),
+        )
+        # Always write geojson alongside the light bundle so finalize_state
+        # can reconstitute the leader's full state-root bundle without
+        # re-running the algorithm.
+        formats = _FULL_FORMATS if full_artifacts else (_LIGHT_FORMATS | {"geojson"})
+        write_outputs(exp_dir, result.districts, info, formats=formats)
+    else:
+        _write_failure_log(exp_dir, result, state_info, seed)
+
+    _write_task_result(exp_dir, result)
+    return result
+
+
+def _write_task_result(exp_dir: Path, result: AlgoResult) -> None:
+    """Write a small per-task status sidecar that finalize_state reads.
+
+    This avoids reparsing metrics.json / run.log and is robust to either
+    success or failure of the underlying algorithm.
+    """
+    payload = {
+        "name": result.name,
+        "status": "ok" if result.succeeded else "failed",
+        "total_internal_boundary_km": (
+            result.total_internal_boundary_km if result.succeeded else None
+        ),
+        "max_abs_deviation_pct": (
+            result.max_abs_deviation_pct if result.succeeded else None
+        ),
+        "runtime_seconds": result.runtime_seconds,
+        "refine_iterations": result.refine_iterations,
+        "refine_improvement_pct": result.refine_improvement_pct,
+        "error": result.error,
+    }
+    (exp_dir / "task_result.json").write_text(json.dumps(payload, indent=2))
+
+
+def finalize_state(
+    state_code: str,
+    state_output_dir: Path,
+    state_info: dict,
+    *,
+    seed: int = 42,
+    full_artifacts: bool = False,
+) -> LeaderReport:
+    """Compute the per-state leader from completed experiment dirs.
+
+    Reads each `experiments/<algo>/task_result.json`, reconstitutes a
+    minimal AlgoResult, runs `compute_leader`, writes `leader.json` and
+    `leader.md`, and copies the leader's `districts.geojson` (and full
+    bundle) up to `state_output_dir`.
+    """
+    import geopandas as gpd
+
+    state_output_dir = Path(state_output_dir)
+    experiments_dir = state_output_dir / "experiments"
+
+    results: list[AlgoResult] = []
+    for sidecar in sorted(experiments_dir.glob("*/task_result.json")):
+        data = json.loads(sidecar.read_text())
+        if data["status"] == "ok":
+            results.append(AlgoResult(
+                name=data["name"],
+                districts=None,
+                runtime_seconds=data["runtime_seconds"],
+                total_internal_boundary_km=data["total_internal_boundary_km"],
+                max_abs_deviation_pct=data["max_abs_deviation_pct"],
+                polsby_popper=[],
+                reock=[],
+                convex_hull_ratio=[],
+                refine_iterations=data.get("refine_iterations", 0),
+                refine_improvement_pct=data.get("refine_improvement_pct", 0.0),
+            ))
+        else:
+            results.append(AlgoResult(
+                name=data["name"],
+                districts=None,
+                runtime_seconds=data["runtime_seconds"],
+                total_internal_boundary_km=float("inf"),
+                max_abs_deviation_pct=float("nan"),
+                polsby_popper=[],
+                reock=[],
+                convex_hull_ratio=[],
+                error=data["error"],
+            ))
+
+    report = compute_leader(results)
+
+    if report.leader is not None:
+        leader_geojson = experiments_dir / report.leader / "districts.geojson"
+        if leader_geojson.exists():
+            leader_districts = gpd.read_file(leader_geojson)
+            leader_result = next(r for r in results if r.name == report.leader)
+            info = RunInfo(
+                state_code=state_info["code"],
+                state_name=state_info["name"],
+                algorithm=report.leader,
+                seed=seed,
+                runtime_seconds=leader_result.runtime_seconds,
+                git_commit=current_git_commit(),
+            )
+            write_outputs(state_output_dir, leader_districts, info, formats=_FULL_FORMATS)
+
+    _write_leader_files(state_output_dir, report, state_info)
+    return report
 
 
 def run_state_experiments(

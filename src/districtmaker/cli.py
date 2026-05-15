@@ -5,10 +5,18 @@ from pathlib import Path
 
 import click
 
+from districtmaker.compare import ALGORITHM_NAMES
 from districtmaker.experiments import run_state_experiments
 from districtmaker.output.writer import get_logger
 from districtmaker.pipeline import ALGORITHMS as _ALGORITHMS, execute_run
-from districtmaker.validate import TIERS, run_tier, write_tier_summary
+from districtmaker.scheduler import SchedulerState, mutate, read_state
+from districtmaker.task_graph import ExperimentPlan
+from districtmaker.validate import (
+    TIERS,
+    run_experiment,
+    run_tier,
+    write_tier_summary,
+)
 
 
 @click.group()
@@ -191,6 +199,44 @@ def compare(
     show_default=True,
     help="Emit geojson + shapefile into every experiment folder, not just the leader's.",
 )
+@click.option(
+    "--cpu",
+    "cpu_pct",
+    type=click.FloatRange(1.0, 100.0),
+    default=None,
+    help=(
+        "Target system CPU percentage cap (1-100). When set, runs in parallel "
+        "mode: tasks dispatch only while observed CPU is below the cap. "
+        "Adjustable mid-flight via `validate-ctl set-cpu`. Default (unset) "
+        "runs sequentially, preserving the pre-parallel behavior."
+    ),
+)
+@click.option(
+    "--max-workers",
+    type=int,
+    default=None,
+    help=(
+        "Hard ceiling on concurrent tasks (parallel mode only). Useful when "
+        "memory rather than CPU is the binding constraint. TX and CA can each "
+        "peak ~8-10 GB during metis+kl and splitline-realized+kl; size N to fit."
+    ),
+)
+@click.option(
+    "--algorithms",
+    "algorithms_csv",
+    default=None,
+    help=(
+        "Comma-separated subset of algorithms to run. Defaults to the full "
+        f"bake-off: {', '.join(ALGORITHM_NAMES)}."
+    ),
+)
+@click.option(
+    "--poll-seconds",
+    type=float,
+    default=3.0,
+    show_default=True,
+    help="Scheduler poll interval (parallel mode only).",
+)
 def validate(
     tier: str | None,
     states: str | None,
@@ -199,27 +245,67 @@ def validate(
     tolerance: float,
     seed: int,
     full_artifacts: bool,
+    cpu_pct: float | None,
+    max_workers: int | None,
+    algorithms_csv: str | None,
+    poll_seconds: float,
 ) -> None:
-    """Run the production pipeline across a tier or list of states."""
+    """Run the production pipeline across a tier or list of states.
+
+    Sequential by default. Pass `--cpu N` (1-100) to run in parallel mode
+    under a CPU-percentage cap that can be adjusted mid-flight via the
+    `validate-ctl` subcommands.
+    """
     log = get_logger()
     if (tier is None) == (states is None):
         raise click.UsageError("Provide exactly one of --tier or --states")
 
-    state_list = None
     if states:
         state_list = [s.strip().upper() for s in states.split(",") if s.strip()]
+    else:
+        state_list = list(TIERS[tier])
 
-    results = run_tier(
-        tier_name=tier,
-        states=state_list,
-        output_dir=output_dir,
-        force=force,
-        tolerance=tolerance,
-        seed=seed,
-        full_artifacts=full_artifacts,
-        log=log,
-    )
-    paths = write_tier_summary(output_dir, results, tier)
+    if algorithms_csv:
+        algorithms = tuple(s.strip() for s in algorithms_csv.split(",") if s.strip())
+        for a in algorithms:
+            if a not in ALGORITHM_NAMES:
+                raise click.UsageError(f"unknown algorithm: {a!r}")
+    else:
+        algorithms = ALGORITHM_NAMES
+
+    if cpu_pct is None:
+        # Sequential path — preserves prior behavior exactly.
+        results = run_tier(
+            tier_name=tier,
+            states=state_list,
+            output_dir=output_dir,
+            force=force,
+            tolerance=tolerance,
+            seed=seed,
+            full_artifacts=full_artifacts,
+            log=log,
+        )
+        paths = write_tier_summary(output_dir, results, tier)
+    else:
+        plan = ExperimentPlan(states=tuple(state_list), algorithms=algorithms)
+        results = run_experiment(
+            plan,
+            output_dir=output_dir,
+            initial_cpu_pct=cpu_pct,
+            max_workers=max_workers,
+            poll_seconds=poll_seconds,
+            force=force,
+            seed=seed,
+            tolerance=tolerance,
+            full_artifacts=full_artifacts,
+            tier_name=tier,
+            log=log,
+        )
+        paths = {
+            "json": output_dir / "summary.json",
+            "markdown": output_dir / "summary.md",
+        }
+
     log.info("Wrote tier summary:")
     for kind, path in paths.items():
         log.info("  %s: %s", kind, path)
@@ -228,6 +314,131 @@ def validate(
     failed = sum(1 for r in results if r.status == "failed")
     skipped = sum(1 for r in results if r.status == "skipped")
     log.info("Done: %d ok, %d failed, %d skipped (of %d)", ok, failed, skipped, len(results))
+
+
+# --- validate-ctl: mid-flight control over a running `validate --cpu` ----------
+
+
+@cli.group("validate-ctl")
+def validate_ctl() -> None:
+    """Mid-flight control over a running parallel `validate` run.
+
+    These subcommands edit the scheduler control file at
+    `<output>/.scheduler_state.json`. The controller polls the file and
+    adjusts on the next tick (default ~3 s).
+    """
+
+
+def _ctl_output_option() -> click.Option:
+    return click.Option(
+        ["--output", "output_dir"],
+        required=True,
+        type=click.Path(file_okay=False, path_type=Path),
+        help="Output directory of the running validate invocation.",
+    )
+
+
+def _replace(state: SchedulerState, **kwargs) -> SchedulerState:
+    from dataclasses import replace
+    return replace(state, **kwargs)
+
+
+@validate_ctl.command("set-cpu")
+@click.option("--pct", type=click.FloatRange(1.0, 100.0), required=True)
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_set_cpu(pct: float, output_dir: Path) -> None:
+    """Adjust the target CPU cap of a running run."""
+    new = mutate(output_dir, lambda s: _replace(s, target_cpu_pct=pct))
+    click.echo(f"target_cpu_pct = {new.target_cpu_pct}  (version={new.version})")
+
+
+@validate_ctl.command("set-max-workers")
+@click.option("--workers", type=int, default=None,
+              help="New hard ceiling; pass without value or use --unlimited to clear.")
+@click.option("--unlimited", is_flag=True, default=False,
+              help="Clear the hard ceiling (workers controlled by CPU cap only).")
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_set_max_workers(workers: int | None, unlimited: bool, output_dir: Path) -> None:
+    """Adjust the hard concurrency ceiling of a running run."""
+    target = None if unlimited else workers
+    new = mutate(output_dir, lambda s: _replace(s, max_workers=target))
+    click.echo(f"max_workers = {new.max_workers}  (version={new.version})")
+
+
+@validate_ctl.command("pause")
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_pause(output_dir: Path) -> None:
+    """Stop dispatching new tasks. In-flight tasks run to completion."""
+    new = mutate(output_dir, lambda s: _replace(s, paused=True))
+    click.echo(f"paused (version={new.version})")
+
+
+@validate_ctl.command("freeze")
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_freeze(output_dir: Path) -> None:
+    """SIGSTOP every live worker — instantaneous pause that holds RAM.
+
+    Use when interactive work needs the CPU for a short window and waiting
+    for in-flight tasks (TX/CA can take 2-3 hours each) is not viable.
+    Frozen workers consume 0% CPU but still hold their resident memory —
+    on a 4-worker freeze with large states, expect ~30 GB resident until
+    `validate-ctl resume`.
+    """
+    new = mutate(output_dir, lambda s: _replace(s, freeze=True))
+    click.echo(f"frozen (version={new.version})")
+
+
+@validate_ctl.command("resume")
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_resume(output_dir: Path) -> None:
+    """Clear pause and freeze flags; resume dispatching and continue any
+    frozen workers."""
+    new = mutate(output_dir, lambda s: _replace(s, paused=False, freeze=False))
+    click.echo(f"resumed (version={new.version})")
+
+
+@validate_ctl.command("status")
+@click.option(
+    "--output", "output_dir", required=True,
+    type=click.Path(file_okay=False, path_type=Path),
+)
+def ctl_status(output_dir: Path) -> None:
+    """Print the current scheduler state and run progress."""
+    try:
+        s = read_state(output_dir)
+    except FileNotFoundError:
+        raise click.ClickException(f"no scheduler state at {output_dir}")
+    click.echo(f"controller pid: {s.pid}")
+    click.echo(f"started_at:     {s.started_at}")
+    click.echo(f"target_cpu_pct: {s.target_cpu_pct}")
+    click.echo(f"max_workers:    {s.max_workers}")
+    click.echo(f"paused:         {s.paused}")
+    click.echo(f"freeze:         {s.freeze}")
+    click.echo(f"state version:  {s.version}")
+    summary_path = output_dir / "summary.json"
+    if summary_path.exists():
+        import json
+        data = json.loads(summary_path.read_text())
+        click.echo(
+            f"states: {data.get('ok_count', 0)} ok, "
+            f"{data.get('failed_count', 0)} failed, "
+            f"{data.get('state_count', 0)} total"
+        )
 
 
 if __name__ == "__main__":

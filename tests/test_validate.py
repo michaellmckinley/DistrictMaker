@@ -9,7 +9,13 @@ from click.testing import CliRunner
 
 from districtmaker.cli import cli
 from districtmaker.experiments import LeaderReport, RankEntry
-from districtmaker.validate import TIERS, run_tier, write_tier_summary
+from districtmaker.validate import (
+    TIERS,
+    append_tier_run,
+    run_tier,
+    update_state_in_summary,
+    write_tier_summary,
+)
 
 
 # --- tier definitions -----------------------------------------------------------
@@ -285,6 +291,42 @@ def test_write_tier_summary_handles_failures(tmp_path):
     )
     assert failed_line.rstrip().endswith("|")
     assert failed_line.count("|") == 9  # 8 columns => 9 pipe delimiters
+
+
+# --- granular summary helpers ---------------------------------------------------
+
+
+def test_update_state_in_summary_writes_state_row_without_appending_run(tmp_path):
+    """The incremental ledger update used by the parallel runner must not
+    grow the runs list — runs only get appended once per invocation."""
+    with patch("districtmaker.validate.run_state_experiments") as mock_run:
+        mock_run.side_effect = lambda state_code, output_dir, **kw: _fake_report(state_code)
+        results = run_tier(tier_name=None, states=["AA"], output_dir=tmp_path)
+
+    update_state_in_summary(tmp_path, results[0])
+    update_state_in_summary(tmp_path, results[0])  # idempotent re-write
+
+    data = json.loads((tmp_path / "summary.json").read_text())
+    assert data["state_results"]["AA"]["leader"] == "metis+kl"
+    assert data["runs"] == []                # crucial: nothing appended
+    assert data["state_count"] == 1
+
+
+def test_append_tier_run_appends_one_entry_summarizing_invocation(tmp_path):
+    with patch("districtmaker.validate.run_state_experiments") as mock_run:
+        mock_run.side_effect = lambda state_code, output_dir, **kw: _fake_report(state_code)
+        results = run_tier(tier_name=None, states=["AA", "BB"], output_dir=tmp_path)
+
+    for r in results:
+        update_state_in_summary(tmp_path, r)
+    append_tier_run(tmp_path, "easy", results)
+
+    data = json.loads((tmp_path / "summary.json").read_text())
+    assert len(data["runs"]) == 1
+    run = data["runs"][0]
+    assert run["tier"] == "easy"
+    assert set(run["states_attempted"]) == {"AA", "BB"}
+    assert set(run["ok"]) == {"AA", "BB"}
 
 
 # --- CLI integration ------------------------------------------------------------

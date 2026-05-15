@@ -29,6 +29,35 @@ from districtmaker.metrics.compactness import (
 from districtmaker.metrics.population import ideal_population, population_deviation
 
 
+ALGORITHM_NAMES: tuple[str, ...] = (
+    "splitline-chord",
+    "splitline-realized",
+    "splitline-realized+kl",
+    "metis",
+    "metis+kl",
+    "annealing",
+    "annealing-from-kl",
+)
+"""Canonical, ordered list of algorithm identifiers used everywhere.
+
+The order is the historical sequence in `run_all` and the order
+experiments appear in the per-state leader ledger when sorted by name.
+"""
+
+
+def algorithm_dependencies(name: str) -> tuple[str, ...]:
+    """Return the algorithms that must complete before `name` can run.
+
+    v1: every algorithm task is self-contained (recomputes any internal
+    prerequisites it needs), so the dependency tuple is empty. v2 will
+    populate this when worker-side result passing lands and the cost of
+    re-running prerequisites is no longer acceptable.
+    """
+    if name not in ALGORITHM_NAMES:
+        raise ValueError(f"unknown algorithm: {name!r}")
+    return ()
+
+
 @dataclass(frozen=True)
 class AlgoResult:
     name: str
@@ -160,6 +189,103 @@ def run_all(
     ))
 
     return results
+
+
+def run_one_algorithm(
+    name: str,
+    state_geometry: gpd.GeoDataFrame,
+    blocks: gpd.GeoDataFrame,
+    n_districts: int,
+    edges: np.ndarray,
+    edge_lengths: np.ndarray,
+    seed: int = 42,
+    angle_steps: int = 180,
+    tolerance: float = 0.005,
+) -> AlgoResult:
+    """Run exactly one algorithm by name and return its AlgoResult.
+
+    Per-algorithm dispatch for the parallel runner: each (state, algorithm)
+    worker calls this with the name it was dispatched. KL-refined variants
+    (`splitline-realized+kl`, `metis+kl`) run their base internally — there
+    is no inter-task result passing in v1.
+    """
+    if name not in ALGORITHM_NAMES:
+        raise ValueError(f"unknown algorithm: {name!r}")
+
+    pops = blocks["pop"].to_numpy().astype(np.int64)
+
+    if name == "splitline-chord":
+        return _run_and_measure(
+            name=name,
+            algo=Splitline(angle_steps=angle_steps, objective="chord"),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+        )
+
+    if name == "splitline-realized":
+        return _run_and_measure(
+            name=name,
+            algo=Splitline(angle_steps=angle_steps, objective="realized"),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+
+    if name == "splitline-realized+kl":
+        base = _run_and_measure(
+            name="splitline-realized",
+            algo=Splitline(angle_steps=angle_steps, objective="realized"),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+        return _refine_and_measure(
+            name=name, base=base, blocks=blocks, pops=pops,
+            edges=edges, edge_lengths=edge_lengths,
+            tolerance=tolerance, crs=state_geometry.crs,
+        )
+
+    if name == "metis":
+        return _run_and_measure(
+            name=name, algo=Metis(tolerance=tolerance),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+
+    if name == "metis+kl":
+        base = _run_and_measure(
+            name="metis", algo=Metis(tolerance=tolerance),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+        return _refine_and_measure(
+            name=name, base=base, blocks=blocks, pops=pops,
+            edges=edges, edge_lengths=edge_lengths,
+            tolerance=tolerance, crs=state_geometry.crs,
+        )
+
+    if name == "annealing":
+        return _run_and_measure(
+            name=name, algo=SimulatedAnnealing(tolerance=tolerance),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+
+    if name == "annealing-from-kl":
+        return _run_and_measure(
+            name=name,
+            algo=SimulatedAnnealing(
+                tolerance=tolerance, seed_initial_partition="splitline+kl",
+            ),
+            state=state_geometry, blocks=blocks,
+            n_districts=n_districts, seed=seed,
+            edges=edges, edge_lengths=edge_lengths,
+        )
+
+    raise AssertionError(f"unhandled algorithm: {name}")  # pragma: no cover
 
 
 def _run_and_measure(
