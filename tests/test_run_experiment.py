@@ -64,3 +64,84 @@ def test_no_dispatch_when_no_ready_tasks():
     graph.mark_running(metis_kl)
     picks = decide_dispatch(graph, live={metis, metis_kl}, sched=sched, observed_cpu=10.0)
     assert picks == []
+
+
+# --- multi-start worker path/seed derivation ---------------------------------
+
+
+def test_worker_main_derives_trial_seed_and_path(tmp_path, monkeypatch) -> None:
+    """When task.trial_index is set, _worker_main derives effective_seed
+    and writes to <state>/<algo>/trial-NN-seed-X/."""
+    import multiprocessing as mp
+    from pathlib import Path
+
+    from districtmaker.task_graph import Task
+    from districtmaker.validate import _worker_main
+
+    captured = {}
+
+    def fake_run_single(**kwargs):
+        captured["seed"] = kwargs["seed"]
+        captured["experiment_dir_override"] = kwargs.get("experiment_dir_override")
+        return None
+
+    monkeypatch.setattr(
+        "districtmaker.validate.run_single_algorithm_task", fake_run_single
+    )
+
+    state_dir = tmp_path / "TX"
+    state_dir.mkdir()
+    result_q: mp.Queue = mp.Queue()
+    task = Task("TX", "metis+kl", trial_index=7)
+
+    _worker_main(
+        task=task,
+        state_output_dir=str(state_dir),
+        n_districts=38,
+        seed=42,
+        angle_steps=180,
+        tolerance=0.005,
+        full_artifacts=True,
+        result_q=result_q,
+    )
+
+    assert captured["seed"] == 49, "effective_seed should be base_seed(42) + trial_index(7)"
+    assert captured["experiment_dir_override"] == Path(state_dir) / "metis+kl" / "trial-07-seed-49"
+
+
+def test_worker_main_single_trial_preserves_behavior(tmp_path, monkeypatch) -> None:
+    """When task.trial_index is None, no override is passed (existing behavior)."""
+    import multiprocessing as mp
+
+    from districtmaker.task_graph import Task
+    from districtmaker.validate import _worker_main
+
+    captured = {}
+
+    def fake_run_single(**kwargs):
+        captured["seed"] = kwargs["seed"]
+        captured["experiment_dir_override"] = kwargs.get("experiment_dir_override")
+        return None
+
+    monkeypatch.setattr(
+        "districtmaker.validate.run_single_algorithm_task", fake_run_single
+    )
+
+    state_dir = tmp_path / "TX"
+    state_dir.mkdir()
+    result_q: mp.Queue = mp.Queue()
+    task = Task("TX", "metis+kl")  # trial_index defaults to None
+
+    _worker_main(
+        task=task,
+        state_output_dir=str(state_dir),
+        n_districts=38,
+        seed=42,
+        angle_steps=180,
+        tolerance=0.005,
+        full_artifacts=False,
+        result_q=result_q,
+    )
+
+    assert captured["seed"] == 42
+    assert captured["experiment_dir_override"] is None

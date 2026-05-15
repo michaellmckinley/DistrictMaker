@@ -470,15 +470,26 @@ def _worker_main(
                 elapsed_seconds=elapsed,
             ))
         else:
+            if task.trial_index is not None:
+                effective_seed = seed + task.trial_index
+                trial_dir_name = f"trial-{task.trial_index:02d}-seed-{effective_seed}"
+                experiment_dir_override: Path | None = (
+                    Path(state_output_dir) / task.algorithm / trial_dir_name
+                )
+            else:
+                effective_seed = seed
+                experiment_dir_override = None
+
             run_single_algorithm_task(
                 state_code=task.state_code,
                 algorithm=task.algorithm,
                 state_output_dir=Path(state_output_dir),
                 n_districts=n_districts,
-                seed=seed,
+                seed=effective_seed,
                 angle_steps=angle_steps,
                 tolerance=tolerance,
                 full_artifacts=full_artifacts,
+                experiment_dir_override=experiment_dir_override,
             )
             elapsed = time.perf_counter() - started
             result_q.put(_TaskMessage(task=task, status="ok", elapsed_seconds=elapsed))
