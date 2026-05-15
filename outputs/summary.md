@@ -1,58 +1,58 @@
-# DistrictMaker validation summary
+# DistrictMaker leader ledger
 
 - Total states tracked: 44
 - OK: 44
 - Failed: 0
-- Validate invocations recorded: 9
+- Validate invocations recorded: 12
 
-## Per-state results
+## Per-state leader
 
-| Tier | State | Status | Districts | Boundary (km) | Max dev (%) | Runtime (s) | Algorithm |
-|---|---|---|---:|---:|---:|---:|---|
-| easy | AL | ok | 7 | 1680.94 | 0.2881 | 296.4 | splitline+kl |
-| easy | AR | ok | 4 | 973.32 | 0.1667 | 142.6 | splitline+kl |
-| easy | AZ | ok | 9 | 2403.00 | 0.4943 | 313.4 | splitline+kl |
-| easy | CO | ok | 8 | 1751.69 | 0.4779 | 205.4 | splitline+kl |
-| easy | IA | ok | 4 | 919.77 | 0.1951 | 144.4 | splitline+kl |
-| easy | ID | ok | 2 | 565.44 | 0.0113 | 64.7 | splitline+kl |
-| easy | IN | ok | 9 | 1365.82 | 0.4774 | 323.9 | splitline+kl |
-| easy | KS | ok | 4 | 906.68 | 0.1495 | 140.0 | splitline+kl |
-| easy | KY | ok | 6 | 1024.41 | 0.0752 | 159.3 | splitline+kl |
-| easy | MN | ok | 8 | 1332.88 | 0.1101 | 262.8 | splitline+kl |
-| easy | MO | ok | 8 | 1687.37 | 0.2774 | 412.2 | splitline+kl |
-| easy | MT | ok | 2 | 685.19 | 0.0169 | 78.8 | splitline+kl |
-| easy | NE | ok | 3 | 425.63 | 0.1356 | 58.4 | splitline+kl |
-| easy | NH | ok | 2 | 138.64 | 0.0619 | 15.7 | splitline+kl |
-| easy | NM | ok | 3 | 1043.42 | 0.0909 | 88.3 | splitline+kl |
-| easy | NV | ok | 4 | 907.86 | 0.1536 | 47.7 | splitline+kl |
-| easy | OK | ok | 5 | 1285.25 | 0.0816 | 203.0 | splitline+kl |
-| easy | TN | ok | 9 | 1548.24 | 0.3123 | 334.3 | splitline+kl |
-| easy | UT | ok | 4 | 985.83 | 0.1668 | 71.6 | splitline+kl |
-| easy | WI | ok | 8 | 1629.01 | 0.1335 | 304.6 | splitline+kl |
-| easy | WV | ok | 2 | 301.03 | 0.0093 | 52.1 | splitline+kl |
-| middle | CT | ok | 5 | 405.35 | 0.1404 | 37.2 | splitline+kl |
-| middle | GA | ok | 14 | 2427.02 | 0.2307 | 571.7 | splitline+kl |
-| middle | HI | ok | 2 | 46.97 | 0.0310 | 7.0 | splitline+kl |
-| middle | LA | ok | 6 | 1352.39 | 0.2974 | 209.9 | splitline+kl |
-| middle | MA | ok | 9 | 628.85 | 0.2883 | 122.7 | splitline+kl |
-| middle | MD | ok | 8 | 632.19 | 0.1495 | 82.4 | splitline+kl |
-| middle | ME | ok | 2 | 250.56 | 0.1635 | 31.8 | splitline+kl |
-| middle | MS | ok | 4 | 888.42 | 0.1493 | 108.4 | splitline+kl |
-| middle | NJ | ok | 12 | 732.15 | 0.4979 | 209.7 | splitline+kl |
-| middle | OR | ok | 6 | 1299.25 | 0.2241 | 218.0 | splitline+kl |
-| middle | RI | ok | 2 | 51.86 | 0.0529 | 9.6 | splitline+kl |
-| middle | SC | ok | 7 | 1269.90 | 0.2283 | 185.5 | splitline+kl |
-| middle | VA | ok | 11 | 1677.95 | 0.4273 | 310.6 | splitline+kl |
-| middle | WA | ok | 10 | 2041.22 | 0.4915 | 315.2 | splitline+kl |
-| tough | CA | ok | 52 | 7411.00 | 0.4994 | 2799.3 | splitline+kl |
-| tough | FL | ok | 28 | 3855.91 | 0.4980 | 1428.3 | splitline+kl |
-| tough | IL | ok | 17 | 2112.96 | 0.2209 | 899.4 | splitline+kl |
-| tough | MI | ok | 13 | 2208.60 | 0.3761 | 504.5 | splitline+kl |
-| tough | NC | ok | 14 | 2301.56 | 0.2121 | 598.8 | splitline+kl |
-| tough | NY | ok | 26 | 2247.23 | 0.4764 | 870.1 | splitline+kl |
-| tough | OH | ok | 15 | 2268.96 | 0.3893 | 624.3 | splitline+kl |
-| tough | PA | ok | 17 | 2408.69 | 0.2549 | 917.7 | splitline+kl |
-| tough | TX | ok | 38 | 8421.24 | 0.4898 | 4237.4 | splitline+kl |
+| Tier | State | Status | Leader | Leader boundary (km) | Runner-up | Gap to runner-up | Runtime (s) |
+|---|---|---|---|---:|---|---:|---:|
+| easy | AL | ok | metis+kl | 1582.56 | metis | +0.17% | 770.4 |
+| easy | AR | ok | splitline-realized+kl | 973.32 | annealing-from-kl | +0.00% | 413.7 |
+| easy | AZ | ok | metis+kl | 1606.50 | metis | +0.18% | 815.6 |
+| easy | CO | ok | metis+kl | 1527.35 | metis | +0.04% | 575.0 |
+| easy | IA | ok | splitline-realized+kl | 919.77 | annealing-from-kl | +0.00% | 421.1 |
+| easy | ID | ok | splitline-realized+kl | 565.44 | annealing-from-kl | +0.00% | 250.2 |
+| easy | IN | ok | splitline-realized+kl | 1365.82 | annealing-from-kl | +0.00% | 831.9 |
+| easy | KS | ok | metis+kl | 827.56 | metis | +0.00% | 403.7 |
+| easy | KY | ok | metis+kl | 965.27 | metis | +0.04% | 481.9 |
+| easy | MN | ok | metis+kl | 1289.26 | metis | +0.05% | 724.9 |
+| easy | MO | ok | splitline-realized+kl | 1687.37 | annealing-from-kl | +0.00% | 1080.2 |
+| easy | MT | ok | metis | 631.44 | metis+kl | +0.00% | 291.9 |
+| easy | NE | ok | metis | 410.27 | metis+kl | +0.00% | 177.5 |
+| easy | NH | ok | metis | 110.65 | metis+kl | +0.00% | 61.1 |
+| easy | NM | ok | metis | 804.67 | metis+kl | +0.00% | 295.3 |
+| easy | NV | ok | splitline-realized+kl | 907.86 | annealing-from-kl | +0.00% | 159.2 |
+| easy | OK | ok | metis+kl | 1176.49 | metis | +0.41% | 565.2 |
+| easy | TN | ok | metis+kl | 1375.33 | metis | +0.03% | 904.7 |
+| easy | UT | ok | metis | 594.64 | metis+kl | +0.00% | 228.6 |
+| easy | WI | ok | metis+kl | 1614.98 | metis | +0.00% | 827.2 |
+| easy | WV | ok | metis | 282.91 | metis+kl | +0.00% | 196.3 |
+| middle | CT | ok | metis+kl | 342.09 | metis | +0.00% | 118.4 |
+| middle | GA | ok | metis+kl | 2308.05 | metis | +0.20% | 1412.0 |
+| middle | HI | ok | metis | 44.13 | metis+kl | +0.00% | 32.7 |
+| middle | LA | ok | metis+kl | 1196.07 | metis | +0.12% | 586.9 |
+| middle | MA | ok | metis+kl | 595.61 | metis | +0.09% | 351.2 |
+| middle | MD | ok | metis+kl | 569.39 | metis | +0.09% | 249.7 |
+| middle | ME | ok | metis | 187.87 | metis+kl | +0.00% | 128.0 |
+| middle | MS | ok | metis | 809.00 | metis+kl | +0.00% | 346.7 |
+| middle | NJ | ok | metis+kl | 686.89 | metis | +0.03% | 539.2 |
+| middle | OR | ok | metis+kl | 1007.18 | metis | +0.02% | 611.0 |
+| middle | RI | ok | metis | 47.32 | metis+kl | +0.00% | 37.8 |
+| middle | SC | ok | metis+kl | 1199.63 | metis | +0.20% | 514.2 |
+| middle | VA | ok | metis+kl | 1598.54 | metis | +0.01% | 851.8 |
+| middle | WA | ok | splitline-realized+kl | 2041.22 | annealing-from-kl | +0.00% | 807.7 |
+| tough | CA | ok | splitline-realized+kl | 7323.70 | annealing-from-kl | +0.00% | 6860.0 |
+| tough | FL | ok | metis+kl | 3554.87 | metis | +0.45% | 3314.1 |
+| tough | IL | ok | metis+kl | 2054.19 | metis | +0.06% | 2168.6 |
+| tough | MI | ok | metis+kl | 2119.46 | metis | +0.04% | 1312.1 |
+| tough | NC | ok | metis+kl | 2199.11 | metis | +0.15% | 1551.5 |
+| tough | NY | ok | metis+kl | 2207.02 | metis | +0.22% | 2144.9 |
+| tough | OH | ok | metis+kl | 2186.94 | metis | +0.09% | 1611.8 |
+| tough | PA | ok | metis+kl | 2290.42 | metis | +0.03% | 2243.3 |
+| tough | TX | ok | splitline-realized+kl | 8323.94 | annealing-from-kl | +0.00% | 9758.6 |
 
 ## Run history
 
@@ -67,3 +67,6 @@
 | 2026-05-13T16:14:01.695894+00:00 | easy | 21 | 21 | 0 | 0 |
 | 2026-05-13T16:54:42.668039+00:00 | middle | 14 | 14 | 0 | 0 |
 | 2026-05-13T18:32:26.003127+00:00 | custom | 7 | 7 | 0 | 0 |
+| 2026-05-14T17:30:20.723664+00:00 | easy | 21 | 21 | 0 | 0 |
+| 2026-05-14T19:20:09.166935+00:00 | middle | 14 | 14 | 0 | 0 |
+| 2026-05-15T03:56:15.206496+00:00 | tough | 9 | 9 | 0 | 0 |

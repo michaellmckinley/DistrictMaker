@@ -1,7 +1,7 @@
 {
   "state": "WA",
   "state_name": "Washington",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 10,
   "total_internal_boundary_km": 2041.2237611458756,
   "population": {
@@ -83,8 +83,8 @@
       0.8795603151177028
     ]
   },
-  "runtime_seconds": 315.20251016598195,
+  "runtime_seconds": 280.42344312500063,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T16:29:45.611639+00:00"
+  "generated_at": "2026-05-14T18:15:04.889627+00:00"
 }

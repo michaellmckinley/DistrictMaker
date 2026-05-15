@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "MS",
+    "name": "Mississippi",
+    "fips": "28",
+    "n_districts": 4,
+    "block_count": 112241,
+    "total_population": 2961279
+  },
+  "leader": "metis",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T17:41:25.495944+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 809.0012313955878,
+      "max_abs_deviation_pct": 0.37358857439640103,
+      "runtime_seconds": 16.794709292000334,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 809.0012313955878,
+      "max_abs_deviation_pct": 0.37358857439640103,
+      "runtime_seconds": 17.05959862600139,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 888.4243875760427,
+      "max_abs_deviation_pct": 0.14929359915090742,
+      "runtime_seconds": 89.74561833299958,
+      "refine_iterations": 247,
+      "refine_improvement_pct": 16.04229415686875,
+      "gap_to_leader_pct": 9.817433286651994,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 888.4243875760427,
+      "max_abs_deviation_pct": 0.14929359915090742,
+      "runtime_seconds": 111.47280766699987,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 9.817433286651994,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 1058.1808764951245,
+      "max_abs_deviation_pct": 0.0067200692673672425,
+      "runtime_seconds": 54.27899920799973,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 30.800898123440824,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 1058.1808764951245,
+      "max_abs_deviation_pct": 0.0067200692673672425,
+      "runtime_seconds": 73.38555633299984,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 30.800898123440824,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 1295.474186448425,
+      "max_abs_deviation_pct": 0.018539286571781992,
+      "runtime_seconds": 19.959260291001556,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 60.13253579523419,
+      "error": null
+    }
+  ]
+}

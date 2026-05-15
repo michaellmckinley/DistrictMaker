@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "ME",
+    "name": "Maine",
+    "fips": "23",
+    "n_districts": 2,
+    "block_count": 47138,
+    "total_population": 1362359
+  },
+  "leader": "metis",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T17:33:02.676825+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 187.87037521121232,
+      "max_abs_deviation_pct": 0.019745162618663655,
+      "runtime_seconds": 10.691334208000626,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 187.87037521121232,
+      "max_abs_deviation_pct": 0.019745162618663655,
+      "runtime_seconds": 10.796846125002048,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 250.56015620575934,
+      "max_abs_deviation_pct": 0.16346645781324892,
+      "runtime_seconds": 20.420840375001717,
+      "refine_iterations": 60,
+      "refine_improvement_pct": 16.759793242160338,
+      "gap_to_leader_pct": 33.36863564788666,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 250.56015620575934,
+      "max_abs_deviation_pct": 0.16346645781324892,
+      "runtime_seconds": 32.54418020799858,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 33.36863564788666,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 301.0085702149718,
+      "max_abs_deviation_pct": 0.011964540917628906,
+      "runtime_seconds": 17.51493479200144,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 60.22141323588909,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 301.0085702149718,
+      "max_abs_deviation_pct": 0.011964540917628906,
+      "runtime_seconds": 30.188973374999478,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 60.22141323588909,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 399.377655439022,
+      "max_abs_deviation_pct": 0.002128660654056677,
+      "runtime_seconds": 11.167535167001915,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 112.58149667824088,
+      "error": null
+    }
+  ]
+}

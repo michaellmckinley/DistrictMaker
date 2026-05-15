@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T21:48:16.504770+00:00
+state PA (Pennsylvania)
+algorithm metis+kl
+districts 17
+seed 42
+runtime_seconds 55.808
+git_commit dcf84b5
+max_abs_deviation_pct 0.490452
+total_internal_boundary_km 2290.420226

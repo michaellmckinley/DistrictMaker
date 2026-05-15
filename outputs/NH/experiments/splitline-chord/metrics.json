@@ -1,0 +1,42 @@
+{
+  "state": "NH",
+  "state_name": "New Hampshire",
+  "algorithm": "splitline-chord",
+  "districts": 2,
+  "total_internal_boundary_km": 252.68903076779338,
+  "population": {
+    "ideal": 688764.5,
+    "per_district": [
+      688712,
+      688817
+    ],
+    "deviations_pct": [
+      -0.007622344066803675,
+      0.007622344066803675
+    ],
+    "max_abs_deviation_pct": 0.007622344066803675,
+    "range_pct": 0.01524468813360735
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.22114373211567834,
+      0.3658163321934274
+    ],
+    "reock": [
+      0.24371971221702998,
+      0.40093652384183986
+    ],
+    "schwartzberg": [
+      2.126486758195011,
+      1.6533639136757132
+    ],
+    "convex_hull_ratio": [
+      0.7528492155027924,
+      0.9278025191244763
+    ]
+  },
+  "runtime_seconds": 4.420005500000116,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:45:47.680974+00:00"
+}

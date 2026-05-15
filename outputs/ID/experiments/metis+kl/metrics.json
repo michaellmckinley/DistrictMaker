@@ -1,0 +1,42 @@
+{
+  "state": "ID",
+  "state_name": "Idaho",
+  "algorithm": "metis+kl",
+  "districts": 2,
+  "total_internal_boundary_km": 742.4720279926258,
+  "population": {
+    "ideal": 919553.0,
+    "per_district": [
+      915832,
+      923274
+    ],
+    "deviations_pct": [
+      -0.40465313037965184,
+      0.40465313037965184
+    ],
+    "max_abs_deviation_pct": 0.40465313037965184,
+    "range_pct": 0.8093062607593037
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.19392325427404036,
+      0.25545222590996647
+    ],
+    "reock": [
+      0.3158391921262099,
+      0.22851174083694742
+    ],
+    "schwartzberg": [
+      2.2708322570389945,
+      1.978541455821156
+    ],
+    "convex_hull_ratio": [
+      0.7289718631543345,
+      0.7779503497514045
+    ]
+  },
+  "runtime_seconds": 20.606559540998205,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:39:54.633789+00:00"
+}

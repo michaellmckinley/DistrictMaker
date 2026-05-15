@@ -1,0 +1,6 @@
+state OH (Ohio)
+algorithm splitline-chord
+seed 42
+runtime_seconds 8.996
+status FAILED
+error RuntimeError: No valid cut found — region may be degenerate or angle resolution too coarse

@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "HI",
+    "name": "Hawaii",
+    "fips": "15",
+    "n_districts": 2,
+    "block_count": 14732,
+    "total_population": 1455271
+  },
+  "leader": "metis",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T17:30:54.664365+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 44.12631140512285,
+      "max_abs_deviation_pct": 0.13516382859275006,
+      "runtime_seconds": 2.3573859999996785,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 44.12631140512285,
+      "max_abs_deviation_pct": 0.13516382859275006,
+      "runtime_seconds": 2.3879648330002965,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 46.96939525464217,
+      "max_abs_deviation_pct": 0.03099079140586186,
+      "runtime_seconds": 4.645360249996884,
+      "refine_iterations": 17,
+      "refine_improvement_pct": 7.972964897240027,
+      "gap_to_leader_pct": 6.443058028161529,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 46.96939525464217,
+      "max_abs_deviation_pct": 0.03099079140586186,
+      "runtime_seconds": 9.03447429100197,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 6.443058028161529,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 48.61766857865159,
+      "max_abs_deviation_pct": 0.22655574116436047,
+      "runtime_seconds": 8.721857000000455,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 10.178410636442447,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 51.038692273628904,
+      "max_abs_deviation_pct": 0.04569595628580519,
+      "runtime_seconds": 4.388725875000091,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 15.66498682621263,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 274.1309726442742,
+      "max_abs_deviation_pct": 0.017659941000679597,
+      "runtime_seconds": 2.459865541997715,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 521.2415312204158,
+      "error": null
+    }
+  ]
+}

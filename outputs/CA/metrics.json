@@ -1,7 +1,7 @@
 {
   "state": "CA",
   "state_name": "California",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 52,
   "total_internal_boundary_km": 7323.702402992173,
   "population": {
@@ -335,8 +335,8 @@
       0.8839534210821884
     ]
   },
-  "runtime_seconds": 3059.6199976250064,
+  "runtime_seconds": 2921.8147892089983,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T14:54:29.582586+00:00"
+  "generated_at": "2026-05-15T03:56:14.481005+00:00"
 }

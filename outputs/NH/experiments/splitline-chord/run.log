@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T14:45:47.680974+00:00
+state NH (New Hampshire)
+algorithm splitline-chord
+districts 2
+seed 42
+runtime_seconds 4.420
+git_commit 84d147f
+max_abs_deviation_pct 0.007622
+total_internal_boundary_km 252.689031

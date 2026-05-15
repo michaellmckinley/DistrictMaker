@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T17:16:32.606931+00:00
+state MO (Missouri)
+algorithm metis
+districts 8
+seed 42
+runtime_seconds 30.175
+git_commit dcf84b5
+max_abs_deviation_pct 0.404994
+total_internal_boundary_km 1894.102200

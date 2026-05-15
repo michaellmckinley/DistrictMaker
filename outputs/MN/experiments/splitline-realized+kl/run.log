@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T16:58:32.476919+00:00
+state MN (Minnesota)
+algorithm splitline-realized+kl
+districts 8
+seed 42
+runtime_seconds 236.852
+git_commit dcf84b5
+max_abs_deviation_pct 0.110085
+total_internal_boundary_km 1332.880133

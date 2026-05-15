@@ -1,7 +1,7 @@
 {
   "state": "MO",
   "state_name": "Missouri",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 8,
   "total_internal_boundary_km": 1687.3651693266818,
   "population": {
@@ -71,8 +71,8 @@
       0.975330061656825
     ]
   },
-  "runtime_seconds": 412.1513093750691,
+  "runtime_seconds": 359.5299294589968,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T16:08:04.853295+00:00"
+  "generated_at": "2026-05-14T17:16:33.229439+00:00"
 }

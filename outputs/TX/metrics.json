@@ -1,7 +1,7 @@
 {
   "state": "TX",
   "state_name": "Texas",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 38,
   "total_internal_boundary_km": 8323.944674147437,
   "population": {
@@ -251,8 +251,8 @@
       0.8615347513367737
     ]
   },
-  "runtime_seconds": 4370.1375415420625,
+  "runtime_seconds": 4164.075455457998,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T13:07:39.304571+00:00"
+  "generated_at": "2026-05-15T02:01:54.487561+00:00"
 }

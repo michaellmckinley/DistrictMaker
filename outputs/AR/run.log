@@ -1,11 +1,11 @@
 districtmaker 0.1.0
 python 3.11.11
-generated_at 2026-05-13T15:11:55.907542+00:00
+generated_at 2026-05-14T15:03:50.682032+00:00
 state AR (Arkansas)
-algorithm splitline+kl
+algorithm splitline-realized+kl
 districts 4
 seed 42
-runtime_seconds 142.585
-git_commit 8ed2cc0
+runtime_seconds 119.271
+git_commit 84d147f
 max_abs_deviation_pct 0.166693
 total_internal_boundary_km 973.317585

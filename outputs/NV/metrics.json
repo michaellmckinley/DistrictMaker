@@ -1,7 +1,7 @@
 {
   "state": "NV",
   "state_name": "Nevada",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 4,
   "total_internal_boundary_km": 907.8579292470542,
   "population": {
@@ -47,8 +47,8 @@
       0.8732775280424367
     ]
   },
-  "runtime_seconds": 47.66664166597184,
+  "runtime_seconds": 36.41815075000159,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T15:18:46.184380+00:00"
+  "generated_at": "2026-05-14T15:20:14.830345+00:00"
 }

@@ -1,11 +1,11 @@
 districtmaker 0.1.0
 python 3.11.11
-generated_at 2026-05-13T15:20:25.341786+00:00
+generated_at 2026-05-14T15:24:03.485440+00:00
 state UT (Utah)
-algorithm splitline+kl
+algorithm metis
 districts 4
 seed 42
-runtime_seconds 71.554
-git_commit 8ed2cc0
-max_abs_deviation_pct 0.166768
-total_internal_boundary_km 985.831448
+runtime_seconds 14.819
+git_commit dcf84b5
+max_abs_deviation_pct 0.212005
+total_internal_boundary_km 594.643130

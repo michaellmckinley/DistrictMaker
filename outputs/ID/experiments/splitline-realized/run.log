@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T14:39:54.376217+00:00
+state ID (Idaho)
+algorithm splitline-realized
+districts 2
+seed 42
+runtime_seconds 32.820
+git_commit 84d147f
+max_abs_deviation_pct 0.000870
+total_internal_boundary_km 638.936079

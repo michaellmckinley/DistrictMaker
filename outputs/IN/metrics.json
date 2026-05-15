@@ -1,7 +1,7 @@
 {
   "state": "IN",
   "state_name": "Indiana",
-  "algorithm": "splitline+kl",
+  "algorithm": "splitline-realized+kl",
   "districts": 9,
   "total_internal_boundary_km": 1365.824505020197,
   "population": {
@@ -77,8 +77,8 @@
       0.9827055425800797
     ]
   },
-  "runtime_seconds": 323.879906124901,
+  "runtime_seconds": 297.8138244160018,
   "seed": 42,
   "districtmaker_version": "0.1.0",
-  "generated_at": "2026-05-13T15:44:34.684056+00:00"
+  "generated_at": "2026-05-14T16:21:48.485769+00:00"
 }

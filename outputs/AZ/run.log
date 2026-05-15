@@ -1,11 +1,11 @@
 districtmaker 0.1.0
 python 3.11.11
-generated_at 2026-05-13T15:38:36.097836+00:00
+generated_at 2026-05-14T16:07:56.532480+00:00
 state AZ (Arizona)
-algorithm splitline+kl
+algorithm metis+kl
 districts 9
 seed 42
-runtime_seconds 313.413
-git_commit 8ed2cc0
-max_abs_deviation_pct 0.494288
-total_internal_boundary_km 2402.998722
+runtime_seconds 26.027
+git_commit dcf84b5
+max_abs_deviation_pct 0.499951
+total_internal_boundary_km 1606.501757

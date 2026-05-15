@@ -1,0 +1,42 @@
+{
+  "state": "MT",
+  "state_name": "Montana",
+  "algorithm": "annealing",
+  "districts": 2,
+  "total_internal_boundary_km": 811.2000589601752,
+  "population": {
+    "ideal": 542112.5,
+    "per_district": [
+      542104,
+      542121
+    ],
+    "deviations_pct": [
+      -0.0015679402338075583,
+      0.0015679402338075583
+    ],
+    "max_abs_deviation_pct": 0.0015679402338075583,
+    "range_pct": 0.0031358804676151165
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.5138287786133087,
+      0.3082661565533345
+    ],
+    "reock": [
+      0.5818297836317359,
+      0.4611412782485613
+    ],
+    "schwartzberg": [
+      1.3950532579413237,
+      1.8010968893149166
+    ],
+    "convex_hull_ratio": [
+      0.9315254357137536,
+      0.9034669544675802
+    ]
+  },
+  "runtime_seconds": 63.15006999999969,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:44:46.763435+00:00"
+}

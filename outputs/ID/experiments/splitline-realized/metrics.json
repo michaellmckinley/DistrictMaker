@@ -1,0 +1,42 @@
+{
+  "state": "ID",
+  "state_name": "Idaho",
+  "algorithm": "splitline-realized",
+  "districts": 2,
+  "total_internal_boundary_km": 638.9360785324352,
+  "population": {
+    "ideal": 919553.0,
+    "per_district": [
+      919545,
+      919561
+    ],
+    "deviations_pct": [
+      -0.0008699879180427881,
+      0.0008699879180427881
+    ],
+    "max_abs_deviation_pct": 0.0008699879180427881,
+    "range_pct": 0.0017399758360855761
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.3919505088407524,
+      0.2186085535607837
+    ],
+    "reock": [
+      0.5626620912562886,
+      0.22574348735522715
+    ],
+    "schwartzberg": [
+      1.5972922471175244,
+      2.138781528330341
+    ],
+    "convex_hull_ratio": [
+      0.9074693075127817,
+      0.7776301919120306
+    ]
+  },
+  "runtime_seconds": 32.820385958999395,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:39:54.376217+00:00"
+}

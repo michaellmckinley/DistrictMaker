@@ -1,0 +1,6 @@
+state GA (Georgia)
+algorithm splitline-chord
+seed 42
+runtime_seconds 9.815
+status FAILED
+error RuntimeError: No valid cut found — region may be degenerate or angle resolution too coarse

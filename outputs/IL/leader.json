@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "IL",
+    "name": "Illinois",
+    "fips": "17",
+    "n_districts": 17,
+    "block_count": 369978,
+    "total_population": 12812508
+  },
+  "leader": "metis+kl",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T21:10:54.184033+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2054.190140811803,
+      "max_abs_deviation_pct": 0.49770115265488823,
+      "runtime_seconds": 33.350699834001716,
+      "refine_iterations": 15,
+      "refine_improvement_pct": 0.05593105195410333,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 2055.3397139350377,
+      "max_abs_deviation_pct": 0.40349633342667784,
+      "runtime_seconds": 25.668402249997598,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.055962352286461424,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2112.9571469052685,
+      "max_abs_deviation_pct": 0.22090913035917895,
+      "runtime_seconds": 856.835187208002,
+      "refine_iterations": 1069,
+      "refine_improvement_pct": 11.439707431468987,
+      "gap_to_leader_pct": 2.860835758380248,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2112.9571469052685,
+      "max_abs_deviation_pct": 0.22090913035917895,
+      "runtime_seconds": 869.527760291996,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 2.860835758380248,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 2385.882632718379,
+      "max_abs_deviation_pct": 0.040195096853795,
+      "runtime_seconds": 350.40568554199854,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 16.14711731483112,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 2385.896755332182,
+      "max_abs_deviation_pct": 0.040195096853795,
+      "runtime_seconds": 329.4185440420006,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 16.147804817585705,
+      "error": null
+    },
+    {
+      "rank": null,
+      "experiment": "splitline-chord",
+      "status": "failed",
+      "total_internal_boundary_km": null,
+      "max_abs_deviation_pct": null,
+      "runtime_seconds": 7.905209958997148,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": null,
+      "error": "RuntimeError: No valid cut found \u2014 region may be degenerate or angle resolution too coarse"
+    }
+  ]
+}

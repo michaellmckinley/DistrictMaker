@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "LA",
+    "name": "Louisiana",
+    "fips": "22",
+    "n_districts": 6,
+    "block_count": 142874,
+    "total_population": 4657757
+  },
+  "leader": "metis+kl",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T18:56:37.130604+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 1196.06549438687,
+      "max_abs_deviation_pct": 0.4951524950743509,
+      "runtime_seconds": 21.201845540999784,
+      "refine_iterations": 3,
+      "refine_improvement_pct": 0.1174375560372669,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 1197.4717759748107,
+      "max_abs_deviation_pct": 0.4951524950743509,
+      "runtime_seconds": 20.424638625001535,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.11757563398831522,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 1352.3912314558524,
+      "max_abs_deviation_pct": 0.2974178343782261,
+      "runtime_seconds": 180.00120166600027,
+      "refine_iterations": 404,
+      "refine_improvement_pct": 16.607152002547476,
+      "gap_to_leader_pct": 13.06999807306695,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 1352.3912314558524,
+      "max_abs_deviation_pct": 0.2974178343782261,
+      "runtime_seconds": 201.90214733299945,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 13.06999807306695,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 1621.7112905139845,
+      "max_abs_deviation_pct": 0.04175829696568041,
+      "runtime_seconds": 92.86772375000146,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 35.587164592964896,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 1621.7112905139845,
+      "max_abs_deviation_pct": 0.04175829696568041,
+      "runtime_seconds": 114.11351524999918,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 35.587164592964896,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 2149.3895590757206,
+      "max_abs_deviation_pct": 0.003714234126001696,
+      "runtime_seconds": 26.193915500000003,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 79.70500521608527,
+      "error": null
+    }
+  ]
+}

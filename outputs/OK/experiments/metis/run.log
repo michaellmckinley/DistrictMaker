@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T15:33:28.283904+00:00
+state OK (Oklahoma)
+algorithm metis
+districts 5
+seed 42
+runtime_seconds 18.299
+git_commit dcf84b5
+max_abs_deviation_pct 0.404915
+total_internal_boundary_km 1181.305056

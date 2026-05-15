@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T14:45:47.916099+00:00
+state NH (New Hampshire)
+algorithm metis+kl
+districts 2
+seed 42
+runtime_seconds 4.346
+git_commit 84d147f
+max_abs_deviation_pct 0.146567
+total_internal_boundary_km 110.647862

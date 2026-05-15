@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "ID",
+    "name": "Idaho",
+    "fips": "16",
+    "n_districts": 2,
+    "block_count": 81879,
+    "total_population": 1839106
+  },
+  "leader": "splitline-realized+kl",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T14:39:55.108429+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 565.4402401418184,
+      "max_abs_deviation_pct": 0.011309842934556245,
+      "runtime_seconds": 43.713955334000275,
+      "refine_iterations": 87,
+      "refine_improvement_pct": 11.50284681989342,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 565.4402401418184,
+      "max_abs_deviation_pct": 0.011309842934556245,
+      "runtime_seconds": 66.63482520900106,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 638.9360785324352,
+      "max_abs_deviation_pct": 0.0008699879180427881,
+      "runtime_seconds": 32.820385958999395,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 12.997985140248106,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 638.9360785324352,
+      "max_abs_deviation_pct": 0.0008699879180427881,
+      "runtime_seconds": 55.966955750000125,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 12.997985140248106,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 742.4720279926258,
+      "max_abs_deviation_pct": 0.40465313037965184,
+      "runtime_seconds": 20.606559540998205,
+      "refine_iterations": 2,
+      "refine_improvement_pct": 0.3352001518910755,
+      "gap_to_leader_pct": 31.308664520658443,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 744.9691657678211,
+      "max_abs_deviation_pct": 0.3922558025475421,
+      "runtime_seconds": 20.310843624998597,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 31.75029169854888,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 1650.011312746598,
+      "max_abs_deviation_pct": 0.013049818770641822,
+      "runtime_seconds": 21.17953179200049,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 191.81002617230737,
+      "error": null
+    }
+  ]
+}

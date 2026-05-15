@@ -1,0 +1,42 @@
+{
+  "state": "RI",
+  "state_name": "Rhode Island",
+  "algorithm": "splitline-chord",
+  "districts": 2,
+  "total_internal_boundary_km": 129.84846273928395,
+  "population": {
+    "ideal": 548689.5,
+    "per_district": [
+      548697,
+      548682
+    ],
+    "deviations_pct": [
+      0.0013668932975754047,
+      -0.0013668932975754047
+    ],
+    "max_abs_deviation_pct": 0.0013668932975754047,
+    "range_pct": 0.0027337865951508095
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.17648842880993582,
+      0.26766269921697794
+    ],
+    "reock": [
+      0.1757480424101492,
+      0.3932100589043645
+    ],
+    "schwartzberg": [
+      2.380355822960611,
+      1.9328852563828067
+    ],
+    "convex_hull_ratio": [
+      0.6940115224200935,
+      0.7543958864989548
+    ]
+  },
+  "runtime_seconds": 2.6834526250022464,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T17:33:40.112681+00:00"
+}

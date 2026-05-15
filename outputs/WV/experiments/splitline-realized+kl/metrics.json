@@ -1,0 +1,42 @@
+{
+  "state": "WV",
+  "state_name": "West Virginia",
+  "algorithm": "splitline-realized+kl",
+  "districts": 2,
+  "total_internal_boundary_km": 301.0300470886954,
+  "population": {
+    "ideal": 896858.0,
+    "per_district": [
+      896941,
+      896775
+    ],
+    "deviations_pct": [
+      0.009254530817587623,
+      -0.009254530817587623
+    ],
+    "max_abs_deviation_pct": 0.009254530817587623,
+    "range_pct": 0.018509061635175246
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.16283895290367215,
+      0.33784011618708426
+    ],
+    "reock": [
+      0.37213583844166237,
+      0.693553454615107
+    ],
+    "schwartzberg": [
+      2.478111536261528,
+      1.720459252103886
+    ],
+    "convex_hull_ratio": [
+      0.5820491427971226,
+      0.910805861949587
+    ]
+  },
+  "runtime_seconds": 34.89005383299809,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:49:03.804840+00:00"
+}

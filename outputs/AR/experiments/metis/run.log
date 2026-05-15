@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T15:03:50.233869+00:00
+state AR (Arkansas)
+algorithm metis
+districts 4
+seed 42
+runtime_seconds 19.457
+git_commit 84d147f
+max_abs_deviation_pct 0.398469
+total_internal_boundary_km 987.682231

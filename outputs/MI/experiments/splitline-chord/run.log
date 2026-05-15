@@ -1,0 +1,6 @@
+state MI (Michigan)
+algorithm splitline-chord
+seed 42
+runtime_seconds 5.563
+status FAILED
+error RuntimeError: No valid cut found — region may be degenerate or angle resolution too coarse

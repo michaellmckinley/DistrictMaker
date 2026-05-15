@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T19:42:01.981334+00:00
+state MI (Michigan)
+algorithm annealing-from-kl
+districts 13
+seed 42
+runtime_seconds 520.225
+git_commit dcf84b5
+max_abs_deviation_pct 0.376082
+total_internal_boundary_km 2208.595543

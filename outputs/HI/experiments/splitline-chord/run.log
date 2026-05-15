@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-14T17:30:54.140636+00:00
+state HI (Hawaii)
+algorithm splitline-chord
+districts 2
+seed 42
+runtime_seconds 2.460
+git_commit dcf84b5
+max_abs_deviation_pct 0.017660
+total_internal_boundary_km 274.130973

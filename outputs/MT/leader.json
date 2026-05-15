@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "MT",
+    "name": "Montana",
+    "fips": "30",
+    "n_districts": 2,
+    "block_count": 88417,
+    "total_population": 1084225
+  },
+  "leader": "metis",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T14:44:47.032282+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 631.4362295599702,
+      "max_abs_deviation_pct": 0.1797597362171136,
+      "runtime_seconds": 23.31225375000031,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 631.4362295599702,
+      "max_abs_deviation_pct": 0.1797597362171136,
+      "runtime_seconds": 23.50304537500051,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 685.1892355710837,
+      "max_abs_deviation_pct": 0.016878415458046067,
+      "runtime_seconds": 53.698220749998654,
+      "refine_iterations": 88,
+      "refine_improvement_pct": 15.577340654663255,
+      "gap_to_leader_pct": 8.512816258353185,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 685.1892355710837,
+      "max_abs_deviation_pct": 0.016878415458046067,
+      "runtime_seconds": 78.72567216700008,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 8.512816258353185,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 811.2000589601752,
+      "max_abs_deviation_pct": 0.0015679402338075583,
+      "runtime_seconds": 63.15006999999969,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 28.469039466657968,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 811.6176875787191,
+      "max_abs_deviation_pct": 0.001383476676889022,
+      "runtime_seconds": 38.20951449999848,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 28.535178943455968,
+      "error": null
+    },
+    {
+      "rank": 7,
+      "experiment": "splitline-chord",
+      "status": "ok",
+      "total_internal_boundary_km": 962.5689603025597,
+      "max_abs_deviation_pct": 0.006732919827526575,
+      "runtime_seconds": 23.90688820899959,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 52.441199164854126,
+      "error": null
+    }
+  ]
+}

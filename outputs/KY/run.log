@@ -1,11 +1,11 @@
 districtmaker 0.1.0
 python 3.11.11
-generated_at 2026-05-13T15:27:05.445744+00:00
+generated_at 2026-05-14T15:41:30.524024+00:00
 state KY (Kentucky)
-algorithm splitline+kl
+algorithm metis+kl
 districts 6
 seed 42
-runtime_seconds 159.321
-git_commit 8ed2cc0
-max_abs_deviation_pct 0.075191
-total_internal_boundary_km 1024.406074
+runtime_seconds 24.832
+git_commit dcf84b5
+max_abs_deviation_pct 0.440273
+total_internal_boundary_km 965.270113

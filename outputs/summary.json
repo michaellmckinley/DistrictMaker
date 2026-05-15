@@ -5,1188 +5,572 @@
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "AL",
-        "state_name": "Alabama",
-        "n_districts": 7,
-        "block_count": 185976,
-        "total_population": 5024279,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1680.9392333745595,
-        "max_abs_deviation_pct": 0.28814084568153725,
-        "runtime_seconds": 296.41095366701484,
-        "refine_moves": 530,
-        "refine_improvement_pct": 12.914963197609802,
-        "output_paths": {
-          "geojson": "outputs/AL/districts.geojson",
-          "shapefile": "outputs/AL/districts.shp",
-          "png": "outputs/AL/districts.png",
-          "metrics": "outputs/AL/metrics.json",
-          "log": "outputs/AL/run.log"
-        }
-      },
-      "elapsed_seconds": 341.5675363340415
+      "elapsed_seconds": 770.4002847499996,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1582.5617821827914,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.17475137143133032,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "AR": {
       "state_code": "AR",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "AR",
-        "state_name": "Arkansas",
-        "n_districts": 4,
-        "block_count": 136422,
-        "total_population": 3011524,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 973.3175847471941,
-        "max_abs_deviation_pct": 0.16669300991790204,
-        "runtime_seconds": 142.58541625004727,
-        "refine_moves": 264,
-        "refine_improvement_pct": 16.05187492165044,
-        "output_paths": {
-          "geojson": "outputs/AR/districts.geojson",
-          "shapefile": "outputs/AR/districts.shp",
-          "png": "outputs/AR/districts.png",
-          "metrics": "outputs/AR/metrics.json",
-          "log": "outputs/AR/run.log"
-        }
-      },
-      "elapsed_seconds": 180.70329700002912
+      "elapsed_seconds": 413.6844367499998,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 973.3175847471941,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "AZ": {
       "state_code": "AZ",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "AZ",
-        "state_name": "Arizona",
-        "n_districts": 9,
-        "block_count": 155444,
-        "total_population": 7151502,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2402.998722055436,
-        "max_abs_deviation_pct": 0.4942877733936123,
-        "runtime_seconds": 313.4126270840643,
-        "refine_moves": 707,
-        "refine_improvement_pct": 14.416369987352356,
-        "output_paths": {
-          "geojson": "outputs/AZ/districts.geojson",
-          "shapefile": "outputs/AZ/districts.shp",
-          "png": "outputs/AZ/districts.png",
-          "metrics": "outputs/AZ/metrics.json",
-          "log": "outputs/AZ/run.log"
-        }
-      },
-      "elapsed_seconds": 349.08070033299737
+      "elapsed_seconds": 815.5948768339986,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1606.5017571631747,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.1844316205983287,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "CA": {
       "state_code": "CA",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "CA",
-        "state_name": "California",
-        "n_districts": 52,
-        "block_count": 519723,
-        "total_population": 39538223,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 7411.001668804898,
-        "max_abs_deviation_pct": 0.49944834394808996,
-        "runtime_seconds": 2799.2571574579924,
-        "refine_moves": 3134,
-        "refine_improvement_pct": 15.38027928900043,
-        "output_paths": {
-          "geojson": "outputs/CA/districts.geojson",
-          "shapefile": "outputs/CA/districts.shp",
-          "png": "outputs/CA/districts.png",
-          "metrics": "outputs/CA/metrics.json",
-          "log": "outputs/CA/run.log"
-        }
-      },
-      "elapsed_seconds": 2931.4731956659816
+      "elapsed_seconds": 6860.002881041997,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 7323.702402992173,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "CO": {
       "state_code": "CO",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "CO",
-        "state_name": "Colorado",
-        "n_districts": 8,
-        "block_count": 140345,
-        "total_population": 5773714,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1751.6866799076527,
-        "max_abs_deviation_pct": 0.47785532847660966,
-        "runtime_seconds": 205.41103220789228,
-        "refine_moves": 516,
-        "refine_improvement_pct": 12.755793086242509,
-        "output_paths": {
-          "geojson": "outputs/CO/districts.geojson",
-          "shapefile": "outputs/CO/districts.shp",
-          "png": "outputs/CO/districts.png",
-          "metrics": "outputs/CO/metrics.json",
-          "log": "outputs/CO/run.log"
-        }
-      },
-      "elapsed_seconds": 243.0342904169811
+      "elapsed_seconds": 575.0371624999971,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1527.353151618025,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.04014659603425612,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "CT": {
       "state_code": "CT",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "CT",
-        "state_name": "Connecticut",
-        "n_districts": 5,
-        "block_count": 49926,
-        "total_population": 3605944,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 405.34542849899157,
-        "max_abs_deviation_pct": 0.14035159725164248,
-        "runtime_seconds": 37.19231037492864,
-        "refine_moves": 189,
-        "refine_improvement_pct": 12.301667387921157,
-        "output_paths": {
-          "geojson": "outputs/CT/districts.geojson",
-          "shapefile": "outputs/CT/districts.shp",
-          "png": "outputs/CT/districts.png",
-          "metrics": "outputs/CT/metrics.json",
-          "log": "outputs/CT/run.log"
-        }
-      },
-      "elapsed_seconds": 37.8194766669767
+      "elapsed_seconds": 118.37642595800207,
+      "leader": "metis+kl",
+      "leader_boundary_km": 342.0903523703325,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.0034161782129785924,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "FL": {
       "state_code": "FL",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "FL",
-        "state_name": "Florida",
-        "n_districts": 28,
-        "block_count": 390066,
-        "total_population": 21538187,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 3855.912581371816,
-        "max_abs_deviation_pct": 0.49804099110105726,
-        "runtime_seconds": 1428.332701749052,
-        "refine_moves": 1500,
-        "refine_improvement_pct": 12.996385822016324,
-        "output_paths": {
-          "geojson": "outputs/FL/districts.geojson",
-          "shapefile": "outputs/FL/districts.shp",
-          "png": "outputs/FL/districts.png",
-          "metrics": "outputs/FL/metrics.json",
-          "log": "outputs/FL/run.log"
-        }
-      },
-      "elapsed_seconds": 1431.3929293330293
+      "elapsed_seconds": 3314.0908205829983,
+      "leader": "metis+kl",
+      "leader_boundary_km": 3554.8653380548617,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.449621194154951,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "GA": {
       "state_code": "GA",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "GA",
-        "state_name": "Georgia",
-        "n_districts": 14,
-        "block_count": 232717,
-        "total_population": 10711908,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2427.016391384714,
-        "max_abs_deviation_pct": 0.23071520031725007,
-        "runtime_seconds": 571.6543719579931,
-        "refine_moves": 900,
-        "refine_improvement_pct": 13.64521944841215,
-        "output_paths": {
-          "geojson": "outputs/GA/districts.geojson",
-          "shapefile": "outputs/GA/districts.shp",
-          "png": "outputs/GA/districts.png",
-          "metrics": "outputs/GA/metrics.json",
-          "log": "outputs/GA/run.log"
-        }
-      },
-      "elapsed_seconds": 574.3220715000061
+      "elapsed_seconds": 1411.998347249999,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2308.054440242249,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.1960796825801831,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "HI": {
       "state_code": "HI",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "HI",
-        "state_name": "Hawaii",
-        "n_districts": 2,
-        "block_count": 14732,
-        "total_population": 1455271,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 46.96939525464217,
-        "max_abs_deviation_pct": 0.03099079140586186,
-        "runtime_seconds": 6.98914999992121,
-        "refine_moves": 17,
-        "refine_improvement_pct": 7.972964897240027,
-        "output_paths": {
-          "geojson": "outputs/HI/districts.geojson",
-          "shapefile": "outputs/HI/districts.shp",
-          "png": "outputs/HI/districts.png",
-          "metrics": "outputs/HI/metrics.json",
-          "log": "outputs/HI/run.log"
-        }
-      },
-      "elapsed_seconds": 7.471491709002294
+      "elapsed_seconds": 32.70149799999854,
+      "leader": "metis",
+      "leader_boundary_km": 44.12631140512285,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "IA": {
       "state_code": "IA",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "IA",
-        "state_name": "Iowa",
-        "n_districts": 4,
-        "block_count": 175199,
-        "total_population": 3190369,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 919.7653692999074,
-        "max_abs_deviation_pct": 0.19505580702420316,
-        "runtime_seconds": 144.43165108305402,
-        "refine_moves": 227,
-        "refine_improvement_pct": 12.914148470116881,
-        "output_paths": {
-          "geojson": "outputs/IA/districts.geojson",
-          "shapefile": "outputs/IA/districts.shp",
-          "png": "outputs/IA/districts.png",
-          "metrics": "outputs/IA/metrics.json",
-          "log": "outputs/IA/run.log"
-        }
-      },
-      "elapsed_seconds": 173.27222074999008
+      "elapsed_seconds": 421.1266832500005,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 919.7653692999074,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "ID": {
       "state_code": "ID",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "ID",
-        "state_name": "Idaho",
-        "n_districts": 2,
-        "block_count": 81879,
-        "total_population": 1839106,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 565.4402401418184,
-        "max_abs_deviation_pct": 0.011309842934556245,
-        "runtime_seconds": 64.71750283404253,
-        "refine_moves": 87,
-        "refine_improvement_pct": 11.50284681989342,
-        "output_paths": {
-          "geojson": "outputs/ID/districts.geojson",
-          "shapefile": "outputs/ID/districts.shp",
-          "png": "outputs/ID/districts.png",
-          "metrics": "outputs/ID/metrics.json",
-          "log": "outputs/ID/run.log"
-        }
-      },
-      "elapsed_seconds": 66.48254058300517
+      "elapsed_seconds": 250.22953116600002,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 565.4402401418184,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "IL": {
       "state_code": "IL",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "IL",
-        "state_name": "Illinois",
-        "n_districts": 17,
-        "block_count": 369978,
-        "total_population": 12812508,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2112.9571469052685,
-        "max_abs_deviation_pct": 0.22090913035917895,
-        "runtime_seconds": 899.4225239170482,
-        "refine_moves": 1069,
-        "refine_improvement_pct": 11.439707431468987,
-        "output_paths": {
-          "geojson": "outputs/IL/districts.geojson",
-          "shapefile": "outputs/IL/districts.shp",
-          "png": "outputs/IL/districts.png",
-          "metrics": "outputs/IL/metrics.json",
-          "log": "outputs/IL/run.log"
-        }
-      },
-      "elapsed_seconds": 901.8812832080293
+      "elapsed_seconds": 2168.592687540997,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2054.190140811803,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.055962352286461424,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "IN": {
       "state_code": "IN",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "IN",
-        "state_name": "Indiana",
-        "n_districts": 9,
-        "block_count": 204568,
-        "total_population": 6785528,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1365.824505020197,
-        "max_abs_deviation_pct": 0.4774278434927914,
-        "runtime_seconds": 323.879906124901,
-        "refine_moves": 508,
-        "refine_improvement_pct": 12.505175497649207,
-        "output_paths": {
-          "geojson": "outputs/IN/districts.geojson",
-          "shapefile": "outputs/IN/districts.shp",
-          "png": "outputs/IN/districts.png",
-          "metrics": "outputs/IN/metrics.json",
-          "log": "outputs/IN/run.log"
-        }
-      },
-      "elapsed_seconds": 358.5897078330163
+      "elapsed_seconds": 831.9297780419984,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 1365.824505020197,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "KS": {
       "state_code": "KS",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "KS",
-        "state_name": "Kansas",
-        "n_districts": 4,
-        "block_count": 172529,
-        "total_population": 2937880,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 906.678248348292,
-        "max_abs_deviation_pct": 0.14949555461761543,
-        "runtime_seconds": 140.02798808307853,
-        "refine_moves": 187,
-        "refine_improvement_pct": 11.705472813378563,
-        "output_paths": {
-          "geojson": "outputs/KS/districts.geojson",
-          "shapefile": "outputs/KS/districts.shp",
-          "png": "outputs/KS/districts.png",
-          "metrics": "outputs/KS/metrics.json",
-          "log": "outputs/KS/run.log"
-        }
-      },
-      "elapsed_seconds": 168.59850137494504
+      "elapsed_seconds": 403.7217449999989,
+      "leader": "metis+kl",
+      "leader_boundary_km": 827.5573431306085,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.0017194996083533976,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "KY": {
       "state_code": "KY",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "KY",
-        "state_name": "Kentucky",
-        "n_districts": 6,
-        "block_count": 132662,
-        "total_population": 4505836,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1024.406074141793,
-        "max_abs_deviation_pct": 0.07519137403136215,
-        "runtime_seconds": 159.32081395899877,
-        "refine_moves": 293,
-        "refine_improvement_pct": 16.306578695866428,
-        "output_paths": {
-          "geojson": "outputs/KY/districts.geojson",
-          "shapefile": "outputs/KY/districts.shp",
-          "png": "outputs/KY/districts.png",
-          "metrics": "outputs/KY/metrics.json",
-          "log": "outputs/KY/run.log"
-        }
-      },
-      "elapsed_seconds": 161.69089679198805
+      "elapsed_seconds": 481.91432650000024,
+      "leader": "metis+kl",
+      "leader_boundary_km": 965.2701133605558,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.0423796360821919,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "LA": {
       "state_code": "LA",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "LA",
-        "state_name": "Louisiana",
-        "n_districts": 6,
-        "block_count": 142874,
-        "total_population": 4657757,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1352.3912314558524,
-        "max_abs_deviation_pct": 0.2974178343782261,
-        "runtime_seconds": 209.8657281260239,
-        "refine_moves": 404,
-        "refine_improvement_pct": 16.607152002547476,
-        "output_paths": {
-          "geojson": "outputs/LA/districts.geojson",
-          "shapefile": "outputs/LA/districts.shp",
-          "png": "outputs/LA/districts.png",
-          "metrics": "outputs/LA/metrics.json",
-          "log": "outputs/LA/run.log"
-        }
-      },
-      "elapsed_seconds": 211.5652262500953
+      "elapsed_seconds": 586.8607099170003,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1196.06549438687,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.11757563398831522,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "MA": {
       "state_code": "MA",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "MA",
-        "state_name": "Massachusetts",
-        "n_districts": 9,
-        "block_count": 107278,
-        "total_population": 7029917,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 628.8501366797872,
-        "max_abs_deviation_pct": 0.2882964336563274,
-        "runtime_seconds": 122.66550699993968,
-        "refine_moves": 391,
-        "refine_improvement_pct": 12.936862961000974,
-        "output_paths": {
-          "geojson": "outputs/MA/districts.geojson",
-          "shapefile": "outputs/MA/districts.shp",
-          "png": "outputs/MA/districts.png",
-          "metrics": "outputs/MA/metrics.json",
-          "log": "outputs/MA/run.log"
-        }
-      },
-      "elapsed_seconds": 123.64066404197365
+      "elapsed_seconds": 351.1930839170018,
+      "leader": "metis+kl",
+      "leader_boundary_km": 595.6139184958208,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.0868403855594847,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "MD": {
       "state_code": "MD",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "MD",
-        "state_name": "Maryland",
-        "n_districts": 8,
-        "block_count": 83827,
-        "total_population": 6177224,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 632.1889580640536,
-        "max_abs_deviation_pct": 0.14945224586319034,
-        "runtime_seconds": 82.42062649899162,
-        "refine_moves": 243,
-        "refine_improvement_pct": 12.059710026215727,
-        "output_paths": {
-          "geojson": "outputs/MD/districts.geojson",
-          "shapefile": "outputs/MD/districts.shp",
-          "png": "outputs/MD/districts.png",
-          "metrics": "outputs/MD/metrics.json",
-          "log": "outputs/MD/run.log"
-        }
-      },
-      "elapsed_seconds": 83.44182574993465
+      "elapsed_seconds": 249.74451679100093,
+      "leader": "metis+kl",
+      "leader_boundary_km": 569.3879004258986,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.09176004330055568,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "ME": {
       "state_code": "ME",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "ME",
-        "state_name": "Maine",
-        "n_districts": 2,
-        "block_count": 47138,
-        "total_population": 1362359,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 250.56015620575934,
-        "max_abs_deviation_pct": 0.16346645781324892,
-        "runtime_seconds": 31.770449874922633,
-        "refine_moves": 60,
-        "refine_improvement_pct": 16.759793242160338,
-        "output_paths": {
-          "geojson": "outputs/ME/districts.geojson",
-          "shapefile": "outputs/ME/districts.shp",
-          "png": "outputs/ME/districts.png",
-          "metrics": "outputs/ME/metrics.json",
-          "log": "outputs/ME/run.log"
-        }
-      },
-      "elapsed_seconds": 32.71050479100086
+      "elapsed_seconds": 128.02624062500036,
+      "leader": "metis",
+      "leader_boundary_km": 187.87037521121232,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "MI": {
       "state_code": "MI",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "MI",
-        "state_name": "Michigan",
-        "n_districts": 13,
-        "block_count": 254730,
-        "total_population": 10077331,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2208.5955428823663,
-        "max_abs_deviation_pct": 0.376081722432266,
-        "runtime_seconds": 504.47933004202787,
-        "refine_moves": 814,
-        "refine_improvement_pct": 10.410607710551773,
-        "output_paths": {
-          "geojson": "outputs/MI/districts.geojson",
-          "shapefile": "outputs/MI/districts.shp",
-          "png": "outputs/MI/districts.png",
-          "metrics": "outputs/MI/metrics.json",
-          "log": "outputs/MI/run.log"
-        }
-      },
-      "elapsed_seconds": 506.49473887495697
+      "elapsed_seconds": 1312.0841576249986,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2119.4568617498626,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.043218776582181595,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "MN": {
       "state_code": "MN",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "MN",
-        "state_name": "Minnesota",
-        "n_districts": 8,
-        "block_count": 198705,
-        "total_population": 5706494,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1332.8801326156222,
-        "max_abs_deviation_pct": 0.1100851065470322,
-        "runtime_seconds": 262.7676798340399,
-        "refine_moves": 441,
-        "refine_improvement_pct": 13.059508698978634,
-        "output_paths": {
-          "geojson": "outputs/MN/districts.geojson",
-          "shapefile": "outputs/MN/districts.shp",
-          "png": "outputs/MN/districts.png",
-          "metrics": "outputs/MN/metrics.json",
-          "log": "outputs/MN/run.log"
-        }
-      },
-      "elapsed_seconds": 308.59789216704667
+      "elapsed_seconds": 724.9005003339989,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1289.257956969317,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.0490272670458819,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "MO": {
       "state_code": "MO",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "MO",
-        "state_name": "Missouri",
-        "n_districts": 8,
-        "block_count": 253632,
-        "total_population": 6154913,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1687.3651693266818,
-        "max_abs_deviation_pct": 0.2773881612948875,
-        "runtime_seconds": 412.1513093750691,
-        "refine_moves": 562,
-        "refine_improvement_pct": 15.038628065564282,
-        "output_paths": {
-          "geojson": "outputs/MO/districts.geojson",
-          "shapefile": "outputs/MO/districts.shp",
-          "png": "outputs/MO/districts.png",
-          "metrics": "outputs/MO/metrics.json",
-          "log": "outputs/MO/run.log"
-        }
-      },
-      "elapsed_seconds": 471.32587375002913
+      "elapsed_seconds": 1080.1579789169991,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 1687.3651693266818,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "MS": {
       "state_code": "MS",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "MS",
-        "state_name": "Mississippi",
-        "n_districts": 4,
-        "block_count": 112241,
-        "total_population": 2961279,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 888.4243875760427,
-        "max_abs_deviation_pct": 0.14929359915090742,
-        "runtime_seconds": 108.43086366693024,
-        "refine_moves": 247,
-        "refine_improvement_pct": 16.04229415686875,
-        "output_paths": {
-          "geojson": "outputs/MS/districts.geojson",
-          "shapefile": "outputs/MS/districts.shp",
-          "png": "outputs/MS/districts.png",
-          "metrics": "outputs/MS/metrics.json",
-          "log": "outputs/MS/run.log"
-        }
-      },
-      "elapsed_seconds": 110.091259000008
+      "elapsed_seconds": 346.66851716699966,
+      "leader": "metis",
+      "leader_boundary_km": 809.0012313955878,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "MT": {
       "state_code": "MT",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "MT",
-        "state_name": "Montana",
-        "n_districts": 2,
-        "block_count": 88417,
-        "total_population": 1084225,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 685.1892355710837,
-        "max_abs_deviation_pct": 0.016878415458046067,
-        "runtime_seconds": 78.82228949991986,
-        "refine_moves": 88,
-        "refine_improvement_pct": 15.577340654663255,
-        "output_paths": {
-          "geojson": "outputs/MT/districts.geojson",
-          "shapefile": "outputs/MT/districts.shp",
-          "png": "outputs/MT/districts.png",
-          "metrics": "outputs/MT/metrics.json",
-          "log": "outputs/MT/run.log"
-        }
-      },
-      "elapsed_seconds": 119.51536829199176
+      "elapsed_seconds": 291.93055037500017,
+      "leader": "metis",
+      "leader_boundary_km": 631.4362295599702,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "NC": {
       "state_code": "NC",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "NC",
-        "state_name": "North Carolina",
-        "n_districts": 14,
-        "block_count": 236638,
-        "total_population": 10439388,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2301.55886084953,
-        "max_abs_deviation_pct": 0.21208139787504116,
-        "runtime_seconds": 598.840352499974,
-        "refine_moves": 914,
-        "refine_improvement_pct": 14.620671916491917,
-        "output_paths": {
-          "geojson": "outputs/NC/districts.geojson",
-          "shapefile": "outputs/NC/districts.shp",
-          "png": "outputs/NC/districts.png",
-          "metrics": "outputs/NC/metrics.json",
-          "log": "outputs/NC/run.log"
-        }
-      },
-      "elapsed_seconds": 601.8359195420053
+      "elapsed_seconds": 1551.4667553750005,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2199.1061607653883,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.1527618875093741,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "NE": {
       "state_code": "NE",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "NE",
-        "state_name": "Nebraska",
-        "n_districts": 3,
-        "block_count": 119103,
-        "total_population": 1961504,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 425.63278344229593,
-        "max_abs_deviation_pct": 0.13555924433496525,
-        "runtime_seconds": 58.4233894579811,
-        "refine_moves": 105,
-        "refine_improvement_pct": 9.47727944521195,
-        "output_paths": {
-          "geojson": "outputs/NE/districts.geojson",
-          "shapefile": "outputs/NE/districts.shp",
-          "png": "outputs/NE/districts.png",
-          "metrics": "outputs/NE/metrics.json",
-          "log": "outputs/NE/run.log"
-        }
-      },
-      "elapsed_seconds": 75.53668308304623
+      "elapsed_seconds": 177.48682283299968,
+      "leader": "metis",
+      "leader_boundary_km": 410.27292833223913,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "NH": {
       "state_code": "NH",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "NH",
-        "state_name": "New Hampshire",
-        "n_districts": 2,
-        "block_count": 31948,
-        "total_population": 1377529,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 138.64006220870047,
-        "max_abs_deviation_pct": 0.061922471323652716,
-        "runtime_seconds": 15.65141970908735,
-        "refine_moves": 55,
-        "refine_improvement_pct": 13.040051449413195,
-        "output_paths": {
-          "geojson": "outputs/NH/districts.geojson",
-          "shapefile": "outputs/NH/districts.shp",
-          "png": "outputs/NH/districts.png",
-          "metrics": "outputs/NH/metrics.json",
-          "log": "outputs/NH/run.log"
-        }
-      },
-      "elapsed_seconds": 23.886538291932084
+      "elapsed_seconds": 61.10845404199972,
+      "leader": "metis",
+      "leader_boundary_km": 110.64786233160538,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "NJ": {
       "state_code": "NJ",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "NJ",
-        "state_name": "New Jersey",
-        "n_districts": 12,
-        "block_count": 137972,
-        "total_population": 9288994,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 732.1527310356684,
-        "max_abs_deviation_pct": 0.49790106442096455,
-        "runtime_seconds": 209.67691504198592,
-        "refine_moves": 567,
-        "refine_improvement_pct": 11.629463715820819,
-        "output_paths": {
-          "geojson": "outputs/NJ/districts.geojson",
-          "shapefile": "outputs/NJ/districts.shp",
-          "png": "outputs/NJ/districts.png",
-          "metrics": "outputs/NJ/metrics.json",
-          "log": "outputs/NJ/run.log"
-        }
-      },
-      "elapsed_seconds": 210.762540332973
+      "elapsed_seconds": 539.221953207998,
+      "leader": "metis+kl",
+      "leader_boundary_km": 686.887683811959,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.027287341094966448,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "NM": {
       "state_code": "NM",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "NM",
-        "state_name": "New Mexico",
-        "n_districts": 3,
-        "block_count": 107215,
-        "total_population": 2117522,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1043.4188145756034,
-        "max_abs_deviation_pct": 0.0908609213977525,
-        "runtime_seconds": 88.31652458314784,
-        "refine_moves": 206,
-        "refine_improvement_pct": 16.019365120453976,
-        "output_paths": {
-          "geojson": "outputs/NM/districts.geojson",
-          "shapefile": "outputs/NM/districts.shp",
-          "png": "outputs/NM/districts.png",
-          "metrics": "outputs/NM/metrics.json",
-          "log": "outputs/NM/run.log"
-        }
-      },
-      "elapsed_seconds": 117.96363579202443
+      "elapsed_seconds": 295.2812878329987,
+      "leader": "metis",
+      "leader_boundary_km": 804.6746982887522,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "NV": {
       "state_code": "NV",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "NV",
-        "state_name": "Nevada",
-        "n_districts": 4,
-        "block_count": 57409,
-        "total_population": 3104614,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 907.8579292470542,
-        "max_abs_deviation_pct": 0.1536422885421505,
-        "runtime_seconds": 47.66664166597184,
-        "refine_moves": 137,
-        "refine_improvement_pct": 15.558517991293488,
-        "output_paths": {
-          "geojson": "outputs/NV/districts.geojson",
-          "shapefile": "outputs/NV/districts.shp",
-          "png": "outputs/NV/districts.png",
-          "metrics": "outputs/NV/metrics.json",
-          "log": "outputs/NV/run.log"
-        }
-      },
-      "elapsed_seconds": 68.38395024999045
+      "elapsed_seconds": 159.2448038750008,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 907.8579292470542,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "NY": {
       "state_code": "NY",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "NY",
-        "state_name": "New York",
-        "n_districts": 26,
-        "block_count": 288819,
-        "total_population": 20201249,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2247.2299712615627,
-        "max_abs_deviation_pct": 0.47635173448928714,
-        "runtime_seconds": 870.1376175000332,
-        "refine_moves": 1047,
-        "refine_improvement_pct": 13.054473761231208,
-        "output_paths": {
-          "geojson": "outputs/NY/districts.geojson",
-          "shapefile": "outputs/NY/districts.shp",
-          "png": "outputs/NY/districts.png",
-          "metrics": "outputs/NY/metrics.json",
-          "log": "outputs/NY/run.log"
-        }
-      },
-      "elapsed_seconds": 872.8346013330156
+      "elapsed_seconds": 2144.922011750001,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2207.016446477804,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.21664300345892482,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "OH": {
       "state_code": "OH",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "OH",
-        "state_name": "Ohio",
-        "n_districts": 15,
-        "block_count": 276428,
-        "total_population": 11799448,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2268.96021495986,
-        "max_abs_deviation_pct": 0.38927244732126054,
-        "runtime_seconds": 624.3132715419633,
-        "refine_moves": 976,
-        "refine_improvement_pct": 13.797761931140872,
-        "output_paths": {
-          "geojson": "outputs/OH/districts.geojson",
-          "shapefile": "outputs/OH/districts.shp",
-          "png": "outputs/OH/districts.png",
-          "metrics": "outputs/OH/metrics.json",
-          "log": "outputs/OH/run.log"
-        }
-      },
-      "elapsed_seconds": 626.6711503330152
+      "elapsed_seconds": 1611.7978163750013,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2186.9425135854813,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.09089996889753678,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "OK": {
       "state_code": "OK",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "OK",
-        "state_name": "Oklahoma",
-        "n_districts": 5,
-        "block_count": 180154,
-        "total_population": 3959353,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1285.2515168401192,
-        "max_abs_deviation_pct": 0.08162949855696415,
-        "runtime_seconds": 203.01807470805943,
-        "refine_moves": 329,
-        "refine_improvement_pct": 11.6450319140919,
-        "output_paths": {
-          "geojson": "outputs/OK/districts.geojson",
-          "shapefile": "outputs/OK/districts.shp",
-          "png": "outputs/OK/districts.png",
-          "metrics": "outputs/OK/metrics.json",
-          "log": "outputs/OK/run.log"
-        }
-      },
-      "elapsed_seconds": 238.43764120806009
+      "elapsed_seconds": 565.233391333999,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1176.489800695397,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.4092900272266404,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "OR": {
       "state_code": "OR",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "OR",
-        "state_name": "Oregon",
-        "n_districts": 6,
-        "block_count": 130807,
-        "total_population": 4237256,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1299.246382947115,
-        "max_abs_deviation_pct": 0.22406009927179835,
-        "runtime_seconds": 218.0029306660872,
-        "refine_moves": 492,
-        "refine_improvement_pct": 17.12315207385365,
-        "output_paths": {
-          "geojson": "outputs/OR/districts.geojson",
-          "shapefile": "outputs/OR/districts.shp",
-          "png": "outputs/OR/districts.png",
-          "metrics": "outputs/OR/metrics.json",
-          "log": "outputs/OR/run.log"
-        }
-      },
-      "elapsed_seconds": 220.4615186250303
+      "elapsed_seconds": 610.9827037079995,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1007.1752743782155,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.015687892725244103,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "PA": {
       "state_code": "PA",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "PA",
-        "state_name": "Pennsylvania",
-        "n_districts": 17,
-        "block_count": 336985,
-        "total_population": 13002700,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2408.693430365749,
-        "max_abs_deviation_pct": 0.2548547609342738,
-        "runtime_seconds": 917.7039333329303,
-        "refine_moves": 1155,
-        "refine_improvement_pct": 14.69274442849106,
-        "output_paths": {
-          "geojson": "outputs/PA/districts.geojson",
-          "shapefile": "outputs/PA/districts.shp",
-          "png": "outputs/PA/districts.png",
-          "metrics": "outputs/PA/metrics.json",
-          "log": "outputs/PA/run.log"
-        }
-      },
-      "elapsed_seconds": 921.0484119170578
+      "elapsed_seconds": 2243.334306083998,
+      "leader": "metis+kl",
+      "leader_boundary_km": 2290.420226408025,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.02868484516021614,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "RI": {
       "state_code": "RI",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "RI",
-        "state_name": "Rhode Island",
-        "n_districts": 2,
-        "block_count": 25649,
-        "total_population": 1097379,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 51.86297748157999,
-        "max_abs_deviation_pct": 0.05294433372608734,
-        "runtime_seconds": 9.641281958087347,
-        "refine_moves": 41,
-        "refine_improvement_pct": 12.94435536418306,
-        "output_paths": {
-          "geojson": "outputs/RI/districts.geojson",
-          "shapefile": "outputs/RI/districts.shp",
-          "png": "outputs/RI/districts.png",
-          "metrics": "outputs/RI/metrics.json",
-          "log": "outputs/RI/run.log"
-        }
-      },
-      "elapsed_seconds": 9.971049582934938
+      "elapsed_seconds": 37.79122329200254,
+      "leader": "metis",
+      "leader_boundary_km": 47.31852645511464,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     },
     "SC": {
       "state_code": "SC",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "SC",
-        "state_name": "South Carolina",
-        "n_districts": 7,
-        "block_count": 146844,
-        "total_population": 5118425,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1269.8979281592185,
-        "max_abs_deviation_pct": 0.22831242032460472,
-        "runtime_seconds": 185.4624541249359,
-        "refine_moves": 374,
-        "refine_improvement_pct": 14.166595008483396,
-        "output_paths": {
-          "geojson": "outputs/SC/districts.geojson",
-          "shapefile": "outputs/SC/districts.shp",
-          "png": "outputs/SC/districts.png",
-          "metrics": "outputs/SC/metrics.json",
-          "log": "outputs/SC/run.log"
-        }
-      },
-      "elapsed_seconds": 187.1472219999414
+      "elapsed_seconds": 514.1975190839985,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1199.631499279511,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.19888116630871938,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "TN": {
       "state_code": "TN",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "TN",
-        "state_name": "Tennessee",
-        "n_districts": 9,
-        "block_count": 179717,
-        "total_population": 6910840,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1548.242416120075,
-        "max_abs_deviation_pct": 0.3123064634689866,
-        "runtime_seconds": 334.3446092499653,
-        "refine_moves": 480,
-        "refine_improvement_pct": 15.283242371829928,
-        "output_paths": {
-          "geojson": "outputs/TN/districts.geojson",
-          "shapefile": "outputs/TN/districts.shp",
-          "png": "outputs/TN/districts.png",
-          "metrics": "outputs/TN/metrics.json",
-          "log": "outputs/TN/run.log"
-        }
-      },
-      "elapsed_seconds": 387.238599708071
+      "elapsed_seconds": 904.7194416249986,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1375.3292353598188,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.027754673157256673,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "TX": {
       "state_code": "TX",
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "summary": {
-        "state_code": "TX",
-        "state_name": "Texas",
-        "n_districts": 38,
-        "block_count": 668757,
-        "total_population": 29145505,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 8421.243498597507,
-        "max_abs_deviation_pct": 0.48984225869477505,
-        "runtime_seconds": 4237.40240500099,
-        "refine_moves": 3261,
-        "refine_improvement_pct": 17.045335802497775,
-        "output_paths": {
-          "geojson": "outputs/TX/districts.geojson",
-          "shapefile": "outputs/TX/districts.shp",
-          "png": "outputs/TX/districts.png",
-          "metrics": "outputs/TX/metrics.json",
-          "log": "outputs/TX/run.log"
-        }
-      },
-      "elapsed_seconds": 4389.184711792041
+      "elapsed_seconds": 9758.629307582996,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 8323.944674147437,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "UT": {
       "state_code": "UT",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "UT",
-        "state_name": "Utah",
-        "n_districts": 4,
-        "block_count": 71207,
-        "total_population": 3271616,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 985.831448251884,
-        "max_abs_deviation_pct": 0.16676773802304426,
-        "runtime_seconds": 71.55369391804561,
-        "refine_moves": 211,
-        "refine_improvement_pct": 15.83117652039646,
-        "output_paths": {
-          "geojson": "outputs/UT/districts.geojson",
-          "shapefile": "outputs/UT/districts.shp",
-          "png": "outputs/UT/districts.png",
-          "metrics": "outputs/UT/metrics.json",
-          "log": "outputs/UT/run.log"
-        }
-      },
-      "elapsed_seconds": 99.1624027499929
+      "elapsed_seconds": 228.62850354200054,
+      "leader": "metis",
+      "leader_boundary_km": 594.6431299651107,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "VA": {
       "state_code": "VA",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "VA",
-        "state_name": "Virginia",
-        "n_districts": 11,
-        "block_count": 163491,
-        "total_population": 8631393,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1677.9459309364847,
-        "max_abs_deviation_pct": 0.4273238398483344,
-        "runtime_seconds": 310.6065038749948,
-        "refine_moves": 653,
-        "refine_improvement_pct": 16.954439366154844,
-        "output_paths": {
-          "geojson": "outputs/VA/districts.geojson",
-          "shapefile": "outputs/VA/districts.shp",
-          "png": "outputs/VA/districts.png",
-          "metrics": "outputs/VA/metrics.json",
-          "log": "outputs/VA/run.log"
-        }
-      },
-      "elapsed_seconds": 313.2156202920014
+      "elapsed_seconds": 851.7725770420002,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1598.5414381893027,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 0.008258728853587742,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "WA": {
       "state_code": "WA",
       "status": "ok",
       "error": null,
       "tier": "middle",
-      "summary": {
-        "state_code": "WA",
-        "state_name": "Washington",
-        "n_districts": 10,
-        "block_count": 158093,
-        "total_population": 7705281,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 2041.2237611458756,
-        "max_abs_deviation_pct": 0.4914940804884308,
-        "runtime_seconds": 315.20251016598195,
-        "refine_moves": 723,
-        "refine_improvement_pct": 13.628671992817726,
-        "output_paths": {
-          "geojson": "outputs/WA/districts.geojson",
-          "shapefile": "outputs/WA/districts.shp",
-          "png": "outputs/WA/districts.png",
-          "metrics": "outputs/WA/metrics.json",
-          "log": "outputs/WA/run.log"
-        }
-      },
-      "elapsed_seconds": 317.0418480000226
+      "elapsed_seconds": 807.6701837500004,
+      "leader": "splitline-realized+kl",
+      "leader_boundary_km": 2041.2237611458756,
+      "runner_up": "annealing-from-kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "WI": {
       "state_code": "WI",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "WI",
-        "state_name": "Wisconsin",
-        "n_districts": 8,
-        "block_count": 203059,
-        "total_population": 5893718,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 1629.0134847308511,
-        "max_abs_deviation_pct": 0.1334641392750722,
-        "runtime_seconds": 304.56227062491234,
-        "refine_moves": 457,
-        "refine_improvement_pct": 15.210765276441629,
-        "output_paths": {
-          "geojson": "outputs/WI/districts.geojson",
-          "shapefile": "outputs/WI/districts.shp",
-          "png": "outputs/WI/districts.png",
-          "metrics": "outputs/WI/metrics.json",
-          "log": "outputs/WI/run.log"
-        }
-      },
-      "elapsed_seconds": 356.7664540410042
+      "elapsed_seconds": 827.2330813750013,
+      "leader": "metis+kl",
+      "leader_boundary_km": 1614.9789503740321,
+      "runner_up": "metis",
+      "gap_to_runner_up_pct": 5.226711496753591e-05,
+      "experiments_ok": 6,
+      "experiments_failed": 1
     },
     "WV": {
       "state_code": "WV",
       "status": "ok",
       "error": null,
       "tier": "easy",
-      "summary": {
-        "state_code": "WV",
-        "state_name": "West Virginia",
-        "n_districts": 2,
-        "block_count": 72558,
-        "total_population": 1793716,
-        "algorithm": "splitline+kl",
-        "total_internal_boundary_km": 301.0300470886954,
-        "max_abs_deviation_pct": 0.009254530817587623,
-        "runtime_seconds": 52.05004091700539,
-        "refine_moves": 65,
-        "refine_improvement_pct": 9.405411437711972,
-        "output_paths": {
-          "geojson": "outputs/WV/districts.geojson",
-          "shapefile": "outputs/WV/districts.shp",
-          "png": "outputs/WV/districts.png",
-          "metrics": "outputs/WV/metrics.json",
-          "log": "outputs/WV/run.log"
-        }
-      },
-      "elapsed_seconds": 81.0237363340566
+      "elapsed_seconds": 196.25756145800005,
+      "leader": "metis",
+      "leader_boundary_km": 282.9089491160433,
+      "runner_up": "metis+kl",
+      "gap_to_runner_up_pct": 0.0,
+      "experiments_ok": 7,
+      "experiments_failed": 0
     }
   },
   "runs": [
@@ -1467,6 +851,124 @@
         "PA",
         "NY",
         "FL"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    {
+      "timestamp": "2026-05-14T17:30:20.723664+00:00",
+      "tier": "easy",
+      "states_attempted": [
+        "ID",
+        "MT",
+        "NH",
+        "WV",
+        "NE",
+        "NM",
+        "AR",
+        "IA",
+        "KS",
+        "NV",
+        "UT",
+        "OK",
+        "KY",
+        "AL",
+        "AZ",
+        "IN",
+        "TN",
+        "CO",
+        "MN",
+        "MO",
+        "WI"
+      ],
+      "ok": [
+        "ID",
+        "MT",
+        "NH",
+        "WV",
+        "NE",
+        "NM",
+        "AR",
+        "IA",
+        "KS",
+        "NV",
+        "UT",
+        "OK",
+        "KY",
+        "AL",
+        "AZ",
+        "IN",
+        "TN",
+        "CO",
+        "MN",
+        "MO",
+        "WI"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    {
+      "timestamp": "2026-05-14T19:20:09.166935+00:00",
+      "tier": "middle",
+      "states_attempted": [
+        "HI",
+        "ME",
+        "RI",
+        "CT",
+        "MS",
+        "OR",
+        "MD",
+        "MA",
+        "WA",
+        "VA",
+        "NJ",
+        "SC",
+        "LA",
+        "GA"
+      ],
+      "ok": [
+        "HI",
+        "ME",
+        "RI",
+        "CT",
+        "MS",
+        "OR",
+        "MD",
+        "MA",
+        "WA",
+        "VA",
+        "NJ",
+        "SC",
+        "LA",
+        "GA"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    {
+      "timestamp": "2026-05-15T03:56:15.206496+00:00",
+      "tier": "tough",
+      "states_attempted": [
+        "MI",
+        "NC",
+        "OH",
+        "IL",
+        "PA",
+        "NY",
+        "FL",
+        "TX",
+        "CA"
+      ],
+      "ok": [
+        "MI",
+        "NC",
+        "OH",
+        "IL",
+        "PA",
+        "NY",
+        "FL",
+        "TX",
+        "CA"
       ],
       "failed": [],
       "skipped": []

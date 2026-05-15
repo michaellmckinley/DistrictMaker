@@ -1,0 +1,100 @@
+{
+  "state": {
+    "code": "OH",
+    "name": "Ohio",
+    "fips": "39",
+    "n_districts": 15,
+    "block_count": 276428,
+    "total_population": 11799448
+  },
+  "leader": "metis+kl",
+  "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
+  "generated_at": "2026-05-14T20:34:45.600352+00:00",
+  "trials_per_experiment": 1,
+  "ranking": [
+    {
+      "rank": 1,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2186.9425135854813,
+      "max_abs_deviation_pct": 0.4982182217337585,
+      "runtime_seconds": 39.495957375002035,
+      "refine_iterations": 44,
+      "refine_improvement_pct": 0.09081741589478172,
+      "gap_to_leader_pct": 0.0,
+      "error": null
+    },
+    {
+      "rank": 2,
+      "experiment": "metis",
+      "status": "ok",
+      "total_internal_boundary_km": 2188.9304436501375,
+      "max_abs_deviation_pct": 0.4049087720035678,
+      "runtime_seconds": 24.331551834002312,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 0.09089996889753678,
+      "error": null
+    },
+    {
+      "rank": 3,
+      "experiment": "splitline-realized+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2268.96021495986,
+      "max_abs_deviation_pct": 0.38927244732126054,
+      "runtime_seconds": 629.9613032079978,
+      "refine_iterations": 976,
+      "refine_improvement_pct": 13.797761931140872,
+      "gap_to_leader_pct": 3.750336410988284,
+      "error": null
+    },
+    {
+      "rank": 4,
+      "experiment": "annealing-from-kl",
+      "status": "ok",
+      "total_internal_boundary_km": 2268.96021495986,
+      "max_abs_deviation_pct": 0.38927244732126054,
+      "runtime_seconds": 615.6850828329989,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 3.750336410988284,
+      "error": null
+    },
+    {
+      "rank": 5,
+      "experiment": "splitline-realized",
+      "status": "ok",
+      "total_internal_boundary_km": 2632.136085779345,
+      "max_abs_deviation_pct": 0.06418096846564743,
+      "runtime_seconds": 245.2776152919978,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 20.356894130882814,
+      "error": null
+    },
+    {
+      "rank": 6,
+      "experiment": "annealing",
+      "status": "ok",
+      "total_internal_boundary_km": 2632.136085779345,
+      "max_abs_deviation_pct": 0.06418096846564743,
+      "runtime_seconds": 268.19237054100086,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": 20.356894130882814,
+      "error": null
+    },
+    {
+      "rank": null,
+      "experiment": "splitline-chord",
+      "status": "failed",
+      "total_internal_boundary_km": null,
+      "max_abs_deviation_pct": null,
+      "runtime_seconds": 8.996310332997382,
+      "refine_iterations": 0,
+      "refine_improvement_pct": 0.0,
+      "gap_to_leader_pct": null,
+      "error": "RuntimeError: No valid cut found \u2014 region may be degenerate or angle resolution too coarse"
+    }
+  ]
+}

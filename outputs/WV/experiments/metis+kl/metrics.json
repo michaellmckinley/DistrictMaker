@@ -1,0 +1,42 @@
+{
+  "state": "WV",
+  "state_name": "West Virginia",
+  "algorithm": "metis+kl",
+  "districts": 2,
+  "total_internal_boundary_km": 282.9089491160433,
+  "population": {
+    "ideal": 896858.0,
+    "per_district": [
+      897495,
+      896221
+    ],
+    "deviations_pct": [
+      0.0710257365157026,
+      -0.0710257365157026
+    ],
+    "max_abs_deviation_pct": 0.0710257365157026,
+    "range_pct": 0.1420514730314052
+  },
+  "compactness": {
+    "polsby_popper": [
+      0.34211792555474296,
+      0.16586827957920966
+    ],
+    "reock": [
+      0.691869409708098,
+      0.34946108832039496
+    ],
+    "schwartzberg": [
+      1.709669188693361,
+      2.455377828565105
+    ],
+    "convex_hull_ratio": [
+      0.8891138826918871,
+      0.574491836609887
+    ]
+  },
+  "runtime_seconds": 15.095109583999147,
+  "seed": 42,
+  "districtmaker_version": "0.1.0",
+  "generated_at": "2026-05-14T14:49:03.984878+00:00"
+}
