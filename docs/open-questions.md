@@ -26,7 +26,7 @@ All 10 questions below are resolved. The detail and reasoning behind each option
 
 ## Open Questions — 2026-05-14 (post n=44 study)
 
-The 44-state convergence study ([`convergence.md`](convergence.md)) settled the empirical picture: KL is a reliable local optimizer, but the *seed* determines which basin a run lands in, and no geographic feature predicts which seed wins. That raises a new set of questions about how to search the seed space more thoroughly. These are **not yet decided** — they are the scoped next phase. Recommendations below; the decision is the author's.
+The 44-state convergence study ([`convergence-2026-05-15.md`](convergence-2026-05-15.md)) settled the empirical picture: KL is a reliable local optimizer, but the *seed* determines which basin a run lands in, and the winning seed follows a district-count regime — bare `metis` for 2–3 district states, `metis+kl` for the mid-range, `splitline-realized+kl` reasserts at the high end (CA, TX). That raises a new set of questions about how to search the seed space more thoroughly. These are **not yet decided** — they are the scoped next phase. Recommendations below; the decision is the author's.
 
 ### 11. Multi-start (random-restart) METIS
 
@@ -63,7 +63,29 @@ The 44-state convergence study ([`convergence.md`](convergence.md)) settled the 
 
 **What's true.** The author wants this eventually: each state names its current leading algorithm, shows the ranked results of every run against that state, and states why that one is the current best. It is explicitly **not** urgent — deferred until the search infrastructure (Q11–Q13) is in place, since the ranking is only meaningful once the seed space is searched thoroughly.
 
-**Recommendation.** Build after Q11–Q13. `districtmaker run` becomes a thin shell over `compare` that emits every algorithm's output plus a per-state ledger row; `outputs/` then reflects the shortest realized boundary found rather than the splitline+KL partition.
+**Status — partially landed 2026-05-15.** `outputs/<STATE>/leader.json` and `leader.md` now carry the leader plus the full six-algorithm ranking with gaps to the leader, max-deviation, and runtime per experiment. `outputs/summary.md` is the cross-state ledger (leader + runner-up + gap). What is still missing from the original ask: a written rationale on *why* the current leader is the current leader for that state. That rationale becomes meaningful once Q11–Q13 land — until then, the ranking is single-trial and the "why" is just "this seed dropped KL into the shortest basin we've sampled."
+
+**Recommendation.** The ranked-ledger half is done; defer the per-state rationale narrative until multi-start (Q11) is producing trial distributions worth narrating.
+
+### 15. Why does `splitline-realized+kl` beat `metis+kl` at the highest district counts?
+
+**Question.** Both CA (52 districts) and TX (38 districts) went to `splitline-realized+kl` in the 2026-05-15 sweep, with `metis+kl` falling to 3rd or 4th in their rankings (CA: metis+kl +1.97%; TX: metis+kl effectively further behind). Every other tough-tier state went to `metis+kl`. What is the splitline structure doing at the high end that metis's basin can't reach?
+
+**What's true.** The earlier read — "more districts → seed matters less, gaps shrink monotonically" — held from ~4 to ~28 districts and then reversed. At 38+ districts the partition is the aggregate of so many cuts that splitline-realized's deterministic recursive halving appears to find a basin metis's multilevel coarsening cannot. This is the opposite of the convergence study's prior framing, which assumed metis was the right ceiling and Q11 (multi-start METIS) would tighten the picture.
+
+If splitline-realized is structurally better above ~30 districts, Q11 effort may not buy what we expected for the largest states — multi-start METIS would search harder within a basin that already lost to splitline-realized there. The right Q11 design is then "multi-start METIS *and* multi-start splitline-realized, compared," not METIS alone.
+
+**Recommendation.** Investigate this before sinking time into multi-start METIS as the primary lever. Cheap first step: look at the CA and TX partition geometries and at the rankings in `outputs/{CA,TX}/leader.md` — does splitline-realized+kl beat metis+kl by a small margin (which would suggest seed variation alone might close it) or a large one (structural)? If it's structural, Q11 expands to cover multi-start splitline-realized too.
+
+### 16. Is KL polish always net-positive against the realized-boundary objective?
+
+**Question.** Bare `metis` (no KL post-refinement) beat `metis+kl` on every 2–3 district state in the 2026-05-15 sweep — 10 of 10. KL's balance pressure may be costing more boundary than it saves when there are only a couple of districts to balance.
+
+**What's true.** KL refines a partition by population-feasible boundary-block swaps that strictly reduce a weighted objective (balance + boundary). The balance term has a fixed weight; on a partition with 2 districts and ~half a million blocks each, that weight pulls the refinement toward tightening population deviation that the metis seed already had comfortably below tolerance — and the price is a slightly longer realized boundary. On a partition with 15 districts, the same balance weight is spread thinner per district and the boundary term dominates again.
+
+The fix is probably not "drop KL on small partitions" — it's "look at the balance weight." If the weight were district-count-aware (or simply lower when nD is small and the seed is already inside tolerance), KL would stop trading boundary for unnecessary balance.
+
+**Recommendation.** Inspect the 10 bare-metis wins. For each: how close was metis's seed to the population tolerance, and how much boundary did `metis+kl` add while tightening it further? Cheap to investigate; results should suggest whether to tune the KL balance weight, gate KL on a tolerance check, or leave it alone and accept bare metis as the legitimate leader on tiny partitions.
 
 ---
 

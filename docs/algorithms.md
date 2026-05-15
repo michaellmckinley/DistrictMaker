@@ -29,7 +29,7 @@ The original chord objective remains available via `--objective chord` for compa
 
 The realized objective produces a substantially better map by every compactness metric *and* by the user's stated objective.
 
-**Verdict.** Deterministic, transparent, and both objectives are first-class — which made it the natural first experiment. But it is one experiment among several, not a privileged "production" algorithm: the n=44 cross-algorithm study ([`convergence.md`](convergence.md)) finds that a METIS seed produces a shorter realized boundary on 35 of 44 states. Splitline's recursive bisection commits to early cuts it cannot undo, and on many states those cuts land KL in a worse basin than METIS reaches. Known weakness, by design under the project's hypothesis: cuts ignore everything except geometry and population, so they routinely chop through cities, counties, and natural communities.
+**Verdict.** Deterministic, transparent, and both objectives are first-class — which made it the natural first experiment. But it is one experiment among several, not a privileged "production" algorithm: the n=44 cross-algorithm study ([`convergence-2026-05-15.md`](convergence-2026-05-15.md)) finds the leader split three ways — `metis+kl` on 25 states, bare `metis` on 10 (the smallest states), and `splitline-realized+kl` on 9 (which includes both of the largest, CA and TX). Splitline's recursive bisection commits to early cuts it cannot undo, and on many mid-range states those cuts land KL in a worse basin than METIS reaches — but at the high end the structure reasserts. Known weakness, by design under the project's hypothesis: cuts ignore everything except geometry and population, so they routinely chop through cities, counties, and natural communities.
 
 **Reference.** Smith, "Gerrymandering and a cure for it: shortest splitline algorithm" (rangevoting.org). Smith uses the chord objective; the realized-boundary variant is our adaptation, motivated by docs/metrics.md's argument that the chord is only a proxy for the user's stated "internal boundary length" objective.
 
@@ -108,7 +108,7 @@ The realized objective produces a substantially better map by every compactness 
 | ILP / MIP | Direct | Exact | Deterministic | High; needs solver | Skip |
 | Power Voronoi | Indirect | Exact | Deterministic | Medium | Skip |
 
-**Note.** The "MVP fit" column reflects the original (2026-05) planning sequence, when splitline was the first algorithm built and the others were staged behind it. It is preserved as historical context. The implemented algorithms — splitline, METIS, simulated annealing, KL refinement — are now treated as co-equal experiments against the objective; [`convergence.md`](convergence.md) reports how they compare across all 44 states. No algorithm is "the production algorithm" — the result for a state is the shortest realized boundary any of them finds.
+**Note.** The "MVP fit" column reflects the original (2026-05) planning sequence, when splitline was the first algorithm built and the others were staged behind it. It is preserved as historical context. The implemented algorithms — splitline, METIS, simulated annealing, KL refinement — are now treated as co-equal experiments against the objective; [`convergence-2026-05-15.md`](convergence-2026-05-15.md) reports how they compare across all 44 states. No algorithm is "the production algorithm" — the result for a state is the shortest realized boundary any of them finds.
 
 ---
 

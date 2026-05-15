@@ -4,7 +4,7 @@ A proposal: that Congressional districts should be drawn by pure geometry — mi
 
 ![Tennessee districts, splitline + KL refinement](outputs/TN/districts.png)
 
-*Tennessee, 9 districts: the shortest-splitline + Kernighan-Lin partition — one of several algorithms run against the realized-boundary objective. Per-district population within 0.5% of ideal. See [`docs/convergence.md`](docs/convergence.md) for the full cross-algorithm comparison.*
+*Tennessee, 9 districts: the current leader against the realized-boundary objective (METIS + Kernighan-Lin refinement). Per-district population within 0.5% of ideal. See [`docs/convergence-2026-05-15.md`](docs/convergence-2026-05-15.md) for the full cross-algorithm comparison.*
 
 ## The thesis
 
@@ -28,16 +28,16 @@ The alternative pursued here is to reduce human judgment in line-drawing to the 
 
 - **Geographic unit:** 2020 census blocks, full polygonal geometry (not centroids).
 - **Objective:** total length of district boundaries traced along *realized* block edges. This figure is 3–5× larger than the straight-line chord some splitline implementations report, and is the only one that corresponds to the actual political-geographic line between districts.
-- **Algorithms:** several partitioners are run against the objective as independent experiments — shortest-splitline, METIS, and simulated annealing — each optionally followed by Kernighan-Lin local refinement on the block adjacency graph. None is the designated "production" method; [`docs/convergence.md`](docs/convergence.md) shows how they compare across all 44 states.
+- **Algorithms:** several partitioners are run against the objective as independent experiments — shortest-splitline, METIS, and simulated annealing — each optionally followed by Kernighan-Lin local refinement on the block adjacency graph. None is the designated "production" method; [`docs/convergence-2026-05-15.md`](docs/convergence-2026-05-15.md) shows how they compare across all 44 states.
 - **Population tolerance:** ≤ 0.5% deviation from each state's ideal district population.
 
-Algorithm detail: [`docs/algorithms.md`](docs/algorithms.md). Cross-algorithm comparison: [`docs/convergence.md`](docs/convergence.md). Metric definitions and the realized-vs-chord distinction: [`docs/metrics.md`](docs/metrics.md).
+Algorithm detail: [`docs/algorithms.md`](docs/algorithms.md). Cross-algorithm comparison: [`docs/convergence-2026-05-15.md`](docs/convergence-2026-05-15.md). Metric definitions and the realized-vs-chord distinction: [`docs/metrics.md`](docs/metrics.md).
 
 ## Results
 
 All 44 multi-district states have been processed. (Six states — AK, DE, ND, SD, VT, WY — have a single congressional district and are not partitioned.)
 
-The per-state directories under [`outputs/`](outputs/) currently render the shortest-splitline + KL partition. The full cross-algorithm comparison across all 44 states — which on most states finds a shorter realized boundary from a different seed — is documented in [`docs/convergence.md`](docs/convergence.md); folding per-state best-of selection into `outputs/` is the next step.
+The per-state directories under [`outputs/`](outputs/) render the current leader for that state — the algorithm that produced the shortest realized boundary in the 2026-05-15 sweep across the six-algorithm bake-off. Each state's full ranking lives at `outputs/<STATE>/leader.md`; the cross-state ledger is at [`outputs/summary.md`](outputs/summary.md). Full study writeup: [`docs/convergence-2026-05-15.md`](docs/convergence-2026-05-15.md).
 
 Browse per-state outputs under [`outputs/`](outputs/). Cross-state ledger: [`outputs/summary.md`](outputs/summary.md) (human-readable) or [`outputs/summary.json`](outputs/summary.json) (machine-readable).
 
@@ -56,7 +56,7 @@ Each per-state directory (e.g. [`outputs/TN/`](outputs/TN/)) contains:
 Stated rather than buried:
 
 - **Block granularity is discrete.** The boundary length is measured along block-edge segments. A continuous-geometry formulation would have a lower minimum than the block-edge formulation; this implementation cannot reach it.
-- **Local search, no global guarantee.** Every algorithm here is a local search; none certifies a global optimum. The convergence study in [`docs/convergence.md`](docs/convergence.md) shows, across all 44 states, that Kernighan-Lin is a reliable local optimizer but that the *seed* determines which basin a run settles in — splitline and METIS seeds diverge by up to 40%. The reported result for a state is the shortest realized boundary found, not a proven optimum.
+- **Local search, no global guarantee.** Every algorithm here is a local search; none certifies a global optimum. The convergence study in [`docs/convergence-2026-05-15.md`](docs/convergence-2026-05-15.md) shows, across all 44 states, that Kernighan-Lin is a reliable local optimizer but that the *seed* determines which basin a run settles in — the leader across the six-algorithm bake-off splits three ways by district count (bare METIS on 2–3 district states, METIS+KL across the mid-range, splitline-realized+KL on both of the largest, CA and TX). The reported result for a state is the shortest realized boundary found, not a proven optimum.
 - **No demographic input.** No race, no party, no incumbency, no county or municipal preservation, no Voting Rights Act considerations, no communities of interest, no Polsby-Popper / Reock / Schwartzberg overlay. The boundary metric is the only objective.
 - **0.5% population tolerance is fixed.** Tighter tolerances would change the achievable boundary length; the trade-off has not been explored here.
 - **Synthetic water edges for islands.** Islands in the block adjacency graph receive a small number of synthetic edges across water to allow contiguous districts. This is an implementation compromise; see [`docs/algorithms.md`](docs/algorithms.md).

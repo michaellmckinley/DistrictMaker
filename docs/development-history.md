@@ -135,6 +135,11 @@ Rationale: `src/` layout (vs. flat package) avoids import-path footguns and matc
 | Compactness metrics and the boundary-length distinction | `docs/metrics.md` |
 | Data sources, acquisition, and the unit-of-aggregation question | `docs/data-sources.md` |
 | Decisions still open | `docs/open-questions.md` |
+| Most recent cross-algorithm convergence sweep | `docs/convergence-2026-05-15.md` |
+
+## Logging Convention (from 2026-05-15)
+
+Major experimental sweeps are filed as their own dated writeups at `docs/<topic>-YYYY-MM-DD.md` — not by overwriting a rolling "current" file. The previous convergence study (the rolling `docs/convergence.md` overwritten on 2026-05-14) is the last artifact under the old convention; its 2026-05-14 content lives in git history and is the predecessor of `docs/convergence-2026-05-15.md`. Each dated writeup is a snapshot: numbers and methodology reflect the codebase as of that date and are not revised in place. Findings that mature into decisions migrate to `docs/open-questions.md`; questions raised by a sweep get appended there (Q15 and Q16 came out of the 2026-05-15 sweep, for instance).
 
 ## Constraints (from the brief)
 

@@ -84,7 +84,7 @@ def run(
     splitline + KL refinement against the realized-boundary objective.
     For the full multi-algorithm experiment record and the per-state
     leader assessment, use `compare` instead — no algorithm is the
-    designated "production" method (see docs/convergence.md).
+    designated "production" method (see docs/convergence-2026-05-15.md).
     """
     execute_run(
         state_code=state_code,
