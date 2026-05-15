@@ -198,3 +198,93 @@ def test_aggregate_results_writes_summary_md(tmp_path) -> None:
     assert "metis+kl" in summary
     assert "95.0" in summary or "95.00" in summary  # best trial
     assert "Best-of-N" in summary  # saturation header
+
+
+# --- end-to-end composition (no subprocesses) --------------------------------
+
+
+def test_end_to_end_multi_start_pipeline_composes(tmp_path, monkeypatch) -> None:
+    """Cross-module integration: build_trial_graph -> _worker_main (synchronous,
+    per-task) -> aggregate_results.
+
+    The worker's `run_single_algorithm_task` is replaced with a stub that
+    writes a metrics.json at the override path the worker computes. This
+    validates that:
+    - build_trial_graph emits the right tasks
+    - _worker_main derives the same path the aggregator expects
+    - aggregate_results consumes those metrics and produces the full output set
+
+    Multiprocessing is NOT exercised here — the scheduler dispatch loop is
+    tested separately via decide_dispatch unit tests. This test focuses on
+    cross-module composition.
+    """
+    import multiprocessing as mp
+    from districtmaker.multi_start import aggregate_results, build_trial_graph
+    from districtmaker.validate import _worker_main
+
+    def fake_run_single(**kwargs):
+        """Write a deterministic metrics.json at whatever override path the
+        worker passed. Boundary km = base 1000 + seed, so trials produce a
+        distinct, deterministic distribution per seed."""
+        exp_dir = Path(kwargs["experiment_dir_override"])
+        exp_dir.mkdir(parents=True, exist_ok=True)
+        (exp_dir / "metrics.json").write_text(json.dumps({
+            "algorithm": kwargs["algorithm"],
+            "seed": kwargs["seed"],
+            "status": "ok",
+            "total_internal_boundary_km": 1000.0 + kwargs["seed"],
+            "max_abs_deviation_pct": 0.4990,
+            "runtime_seconds": 1.0,
+        }))
+        return None
+
+    monkeypatch.setattr(
+        "districtmaker.validate.run_single_algorithm_task", fake_run_single
+    )
+
+    state = "TT"
+    state_dir = tmp_path / state
+    state_dir.mkdir()
+
+    graph = build_trial_graph(state=state, algorithms=("metis",), trials=3)
+    assert len(graph.tasks) == 3
+
+    result_q: mp.Queue = mp.Queue()
+    for task in graph.tasks:
+        _worker_main(
+            task=task,
+            state_output_dir=str(state_dir),
+            n_districts=2,
+            seed=42,  # base seed; _worker_main derives effective_seed per trial
+            angle_steps=180,
+            tolerance=0.005,
+            full_artifacts=True,
+            result_q=result_q,
+        )
+
+    # Each of the 3 trials should have written its metrics.json.
+    for i in range(3):
+        seed = 42 + i
+        trial_dir = state_dir / "metis" / f"trial-{i:02d}-seed-{seed}"
+        assert trial_dir.exists(), f"missing trial dir: {trial_dir}"
+        assert (trial_dir / "metrics.json").exists(), f"missing metrics: {trial_dir}"
+
+    aggregate_results(
+        output_dir=tmp_path,
+        state=state,
+        algorithms=("metis",),
+        trials=3,
+        base_seed=42,
+    )
+
+    assert (tmp_path / "distributions.json").exists()
+    assert (tmp_path / state / "metis" / "best.json").exists()
+    assert (tmp_path / "_summary.md").exists()
+
+    # Best trial should be trial 0 (lowest seed → lowest boundary = 1042).
+    best = json.loads((tmp_path / state / "metis" / "best.json").read_text())
+    assert best["best"]["trial_index"] == 0
+    assert best["best"]["seed"] == 42
+    assert best["best"]["boundary_km"] == 1042.0
+    assert best["trials"] == 3
+    assert best["trials_ok"] == 3
