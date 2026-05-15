@@ -44,3 +44,7 @@ outputs/*/experiments/*/districts.shx
 outputs/*/experiments/*/districts.dbf
 outputs/*/experiments/*/districts.prj
 outputs/*/experiments/*/districts.cpg
+
+# Brainstorming specs are working-tree scratchpads; plans (sibling dir)
+# are committed, specs are not. See memory: feedback-no-spec-in-repo.
+docs/superpowers/specs/
