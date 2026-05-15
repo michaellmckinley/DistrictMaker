@@ -28,6 +28,7 @@ FINALIZATION_ALGORITHM = "_finalize"
 class Task:
     state_code: str
     algorithm: str
+    trial_index: int | None = None
 
     @property
     def is_finalization(self) -> bool:

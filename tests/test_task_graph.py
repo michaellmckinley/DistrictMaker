@@ -96,3 +96,35 @@ def test_all_done_only_when_every_task_in_terminal_state() -> None:
     graph.mark_running(Task("ID", "_finalize"))
     graph.mark_done(Task("ID", "_finalize"))
     assert graph.all_done()
+
+
+# --- trial_index field --------------------------------------------------------
+
+
+def test_task_default_trial_index_is_none() -> None:
+    """Single-trial tasks (the existing case) have trial_index=None."""
+    t = Task("TX", "metis+kl")
+    assert t.trial_index is None
+    assert t.is_finalization is False
+
+
+def test_task_with_trial_index_is_distinct() -> None:
+    """Two tasks with same state+algorithm but different trial_index are distinct."""
+    a = Task("TX", "metis+kl", trial_index=0)
+    b = Task("TX", "metis+kl", trial_index=1)
+    assert a != b
+    assert hash(a) != hash(b)
+
+
+def test_task_with_trial_index_hashable_in_set() -> None:
+    """20 trial tasks for one (state, algo) all coexist in a set."""
+    tasks = {Task("TX", "metis+kl", trial_index=i) for i in range(20)}
+    assert len(tasks) == 20
+
+
+def test_task_trial_index_is_not_finalization() -> None:
+    """trial_index does not interact with finalization detection."""
+    t = Task("TX", "metis+kl", trial_index=3)
+    assert t.is_finalization is False
+    finalize = Task("TX", "_finalize", trial_index=None)
+    assert finalize.is_finalization is True
