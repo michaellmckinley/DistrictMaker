@@ -279,14 +279,18 @@ def run_single_algorithm_task(
     state_loader=load_state,
     adjacency_loader=get_adjacency,
     log: logging.Logger | None = None,
+    experiment_dir_override: Path | None = None,
 ) -> AlgoResult:
     """Run exactly one (state, algorithm) task and write its experiment dir.
 
     Used by the parallel runner as the worker entry point. Each task is
     self-contained: it loads the state, builds adjacency, runs the named
-    algorithm, and writes `state_output_dir/experiments/<algorithm>/`. The
-    finalization step (separate task) reads each experiment's metrics and
-    computes the per-state leader.
+    algorithm, and writes `state_output_dir/experiments/<algorithm>/` by
+    default. Pass `experiment_dir_override` to write to a different path
+    (used by multi-start trials, which write to
+    `state_output_dir/<algo>/trial-NN-seed-X/`). The finalization step
+    (separate task) reads each experiment's metrics and computes the
+    per-state leader.
 
     `state_loader` and `adjacency_loader` are injected for testability;
     production callers use the defaults (real Census loaders).
@@ -313,7 +317,11 @@ def run_single_algorithm_task(
         tolerance=tolerance,
     )
 
-    exp_dir = state_output_dir / "experiments" / algorithm
+    exp_dir = (
+        Path(experiment_dir_override)
+        if experiment_dir_override is not None
+        else state_output_dir / "experiments" / algorithm
+    )
     exp_dir.mkdir(parents=True, exist_ok=True)
     state_info = {
         "code": state.code,

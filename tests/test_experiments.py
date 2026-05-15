@@ -275,3 +275,36 @@ def test_run_state_experiments_all_failed_returns_no_leader(tmp_path):
     assert report.leader is None
     assert (tmp_path / "TT" / "leader.json").exists()
     assert not (tmp_path / "TT" / "districts.geojson").exists()
+
+
+# --- experiment_dir_override -------------------------------------------------
+
+
+def test_run_single_algorithm_task_honors_experiment_dir_override(tmp_path):
+    """When experiment_dir_override is set, results land there, not in
+    <state>/experiments/<algo>."""
+    import numpy as np
+    from districtmaker.experiments import run_single_algorithm_task
+
+    state_dir = tmp_path / "TX"
+    override = tmp_path / "custom" / "trial-00-seed-42"
+    fake_state = _fake_state_data()
+    fake_adj = (np.zeros((0, 2), dtype=np.int64), np.zeros(0))
+    fake_result = _ok_with_districts("metis", 100.0)
+
+    with patch("districtmaker.experiments.run_one_algorithm", return_value=fake_result):
+        result = run_single_algorithm_task(
+            state_code="tt",
+            algorithm="metis",
+            state_output_dir=state_dir,
+            seed=42,
+            n_districts=2,
+            state_loader=lambda code: fake_state,
+            adjacency_loader=lambda code, blocks: fake_adj,
+            experiment_dir_override=override,
+        )
+
+    assert override.exists(), "override dir should be created"
+    assert (override / "metrics.json").exists(), "metrics.json should be in override dir"
+    assert not (state_dir / "experiments" / "metis").exists(), "default path must be skipped"
+    assert result.succeeded
