@@ -145,3 +145,29 @@ def test_worker_main_single_trial_preserves_behavior(tmp_path, monkeypatch) -> N
 
     assert captured["seed"] == 42
     assert captured["experiment_dir_override"] is None
+
+
+# --- record_tier_run flag ----------------------------------------------------
+
+
+def test_run_experiment_skips_tier_row_when_record_tier_run_false(tmp_path) -> None:
+    """With record_tier_run=False, no row is appended to summary.json's runs list."""
+    import json
+    from districtmaker.task_graph import ExperimentPlan
+    from districtmaker.validate import run_experiment
+
+    # Empty plan to keep the test fast — verifies the flag is respected
+    # regardless of how many states were planned.
+    plan = ExperimentPlan(states=(), algorithms=())
+
+    run_experiment(
+        plan=plan,
+        output_dir=tmp_path,
+        record_tier_run=False,
+    )
+
+    summary_path = tmp_path / "summary.json"
+    if summary_path.exists():
+        data = json.loads(summary_path.read_text())
+        assert data.get("runs", []) == [], "no tier run row should be appended"
+    # If summary.json doesn't exist, that's also acceptable — nothing was written.

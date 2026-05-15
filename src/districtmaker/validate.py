@@ -540,6 +540,7 @@ def run_experiment(
     tolerance: float = 0.005,
     full_artifacts: bool = False,
     tier_name: str | None = None,
+    record_tier_run: bool = True,
     log: logging.Logger | None = None,
     _cpu_observer: CpuObserver | None = None,
 ) -> list[StateResult]:
@@ -670,5 +671,6 @@ def run_experiment(
                 live.pop(task, None)
 
     results = list(state_results.values())
-    append_tier_run(output_dir, tier_name, results)
+    if record_tier_run:
+        append_tier_run(output_dir, tier_name, results)
     return results
