@@ -541,6 +541,7 @@ def run_experiment(
     full_artifacts: bool = False,
     tier_name: str | None = None,
     record_tier_run: bool = True,
+    graph_override: TaskGraph | None = None,
     log: logging.Logger | None = None,
     _cpu_observer: CpuObserver | None = None,
 ) -> list[StateResult]:
@@ -557,11 +558,14 @@ def run_experiment(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    targets = list(plan.states)
-    if not force:
-        targets = [s for s in targets if not (output_dir / s / "leader.json").exists()]
-    effective_plan = ExperimentPlan(states=tuple(targets), algorithms=plan.algorithms)
-    graph = build_graph(effective_plan)
+    if graph_override is not None:
+        graph = graph_override
+    else:
+        targets = list(plan.states)
+        if not force:
+            targets = [s for s in targets if not (output_dir / s / "leader.json").exists()]
+        effective_plan = ExperimentPlan(states=tuple(targets), algorithms=plan.algorithms)
+        graph = build_graph(effective_plan)
 
     write_state(output_dir, SchedulerState(
         target_cpu_pct=initial_cpu_pct,

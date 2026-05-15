@@ -291,3 +291,91 @@ def test_validate_ctl_set_max_workers_unlimited_clears_ceiling(tmp_path):
     )
     assert result.exit_code == 0, result.output
     assert read_state(tmp_path).max_workers is None
+
+
+# --- multi-start subcommand --------------------------------------------------
+
+
+def test_multi_start_subcommand_invokes_runner_and_aggregator(tmp_path, monkeypatch):
+    """`districtmaker multi-start ...` builds the right graph, calls
+    run_experiment with record_tier_run=False, then calls aggregate_results."""
+    captured = {}
+
+    def fake_run_experiment(
+        *, plan, output_dir, record_tier_run, seed, full_artifacts,
+        state, algorithms, trials, **kwargs,
+    ):
+        captured["plan_states"] = plan.states
+        captured["plan_algorithms"] = plan.algorithms
+        captured["record_tier_run"] = record_tier_run
+        captured["seed"] = seed
+        captured["full_artifacts"] = full_artifacts
+        captured["state"] = state
+        captured["algorithms"] = algorithms
+        captured["trials"] = trials
+
+    monkeypatch.setattr(
+        "districtmaker.cli._run_multi_start_experiment", fake_run_experiment,
+    )
+
+    def fake_aggregate(**kwargs):
+        captured["aggregated"] = True
+        captured["aggregate_state"] = kwargs["state"]
+        captured["aggregate_algorithms"] = kwargs["algorithms"]
+        captured["aggregate_trials"] = kwargs["trials"]
+        captured["aggregate_base_seed"] = kwargs["base_seed"]
+        return {"distributions": {}, "bests": {}}
+
+    monkeypatch.setattr("districtmaker.cli.aggregate_results", fake_aggregate)
+
+    runner = CliRunner()
+    result = runner.invoke(cli, [
+        "multi-start",
+        "--state", "TX",
+        "--algorithms", "metis+kl",
+        "--trials", "3",
+        "--base-seed", "42",
+        "--cpu", "75",
+        "--output", str(tmp_path / "out"),
+    ])
+
+    assert result.exit_code == 0, result.output
+    assert captured["aggregated"] is True
+    assert captured["aggregate_state"] == "TX"
+    assert captured["aggregate_algorithms"] == ("metis+kl",)
+    assert captured["aggregate_trials"] == 3
+    assert captured["aggregate_base_seed"] == 42
+    assert captured["record_tier_run"] is False
+    assert captured["seed"] == 42
+    assert captured["state"] == "TX"
+    assert captured["algorithms"] == ("metis+kl",)
+
+
+def test_multi_start_rejects_unknown_state(tmp_path):
+    """Invalid state codes fail validation before any work runs."""
+    runner = CliRunner()
+    result = runner.invoke(cli, [
+        "multi-start",
+        "--state", "ZZ",  # not a real state
+        "--algorithms", "metis+kl",
+        "--trials", "1",
+        "--cpu", "75",
+        "--output", str(tmp_path / "out"),
+    ])
+
+    assert result.exit_code != 0
+    assert "ZZ" in result.output or "unknown" in result.output.lower()
+
+
+def test_multi_start_rejects_unknown_algorithm(tmp_path):
+    runner = CliRunner()
+    result = runner.invoke(cli, [
+        "multi-start",
+        "--state", "TX",
+        "--algorithms", "fake-algorithm",
+        "--trials", "1",
+        "--cpu", "75",
+        "--output", str(tmp_path / "out"),
+    ])
+
+    assert result.exit_code != 0

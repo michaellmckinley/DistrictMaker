@@ -7,6 +7,7 @@ import click
 
 from districtmaker.compare import ALGORITHM_NAMES
 from districtmaker.experiments import run_state_experiments
+from districtmaker.multi_start import aggregate_results, build_trial_graph
 from districtmaker.output.writer import get_logger
 from districtmaker.pipeline import ALGORITHMS as _ALGORITHMS, execute_run
 from districtmaker.scheduler import SchedulerState, mutate, read_state
@@ -314,6 +315,128 @@ def validate(
     failed = sum(1 for r in results if r.status == "failed")
     skipped = sum(1 for r in results if r.status == "skipped")
     log.info("Done: %d ok, %d failed, %d skipped (of %d)", ok, failed, skipped, len(results))
+
+
+# --- multi-start: seed-varied trials for one (state, algorithm) ---------------
+
+
+def _run_multi_start_experiment(
+    *, plan, output_dir, record_tier_run, seed, full_artifacts,
+    state: str, algorithms: tuple[str, ...], trials: int, **kwargs,
+):
+    """Indirection seam for the multi-start command.
+
+    The CLI builds its task graph directly (no ExperimentPlan fan-out),
+    so it can't reuse the same call shape as `validate`. This helper
+    is the single surface tests monkeypatch; in production it builds the
+    trial graph and forwards to `run_experiment` with `graph_override`.
+    """
+    graph = build_trial_graph(state=state, algorithms=algorithms, trials=trials)
+    return run_experiment(
+        plan=plan,
+        output_dir=output_dir,
+        record_tier_run=record_tier_run,
+        seed=seed,
+        full_artifacts=full_artifacts,
+        graph_override=graph,
+        **kwargs,
+    )
+
+
+@cli.command("multi-start")
+@click.option("--state", required=True, type=str,
+              help="Single state code (e.g. TX).")
+@click.option("--algorithms", required=True, type=str,
+              help="Comma-separated algorithms (e.g. metis+kl,splitline-realized+kl).")
+@click.option("--trials", required=True, type=int,
+              help="Number of trials per algorithm.")
+@click.option("--base-seed", type=int, default=42, show_default=True,
+              help="seed_i = base_seed + i for i in 0..trials-1.")
+@click.option("--output", required=True,
+              type=click.Path(file_okay=False, path_type=Path),
+              help="Output directory for this experiment.")
+@click.option("--cpu", type=click.FloatRange(1.0, 100.0), default=None,
+              help="Target CPU percentage cap (parallel mode). Required for multi-start.")
+@click.option("--max-workers", type=int, default=None,
+              help="Hard ceiling on concurrent trials.")
+@click.option("--poll-seconds", type=float, default=3.0, show_default=True,
+              help="Scheduler poll interval.")
+@click.option("--tolerance", type=float, default=0.005, show_default=True)
+@click.option("--full-artifacts/--light-artifacts", default=True, show_default=True,
+              help="Default --full-artifacts: emit geojson + shapefile for every trial.")
+@click.option("--force/--skip-existing", default=False, show_default=True,
+              help="Re-run trials whose metrics.json already exists.")
+def multi_start_cmd(
+    state: str,
+    algorithms: str,
+    trials: int,
+    base_seed: int,
+    output: Path,
+    cpu: float | None,
+    max_workers: int | None,
+    poll_seconds: float,
+    tolerance: float,
+    full_artifacts: bool,
+    force: bool,
+) -> None:
+    """Run a multi-start (seed-varied) experiment for one state.
+
+    Each algorithm runs `trials` times with seeds `base_seed`,
+    `base_seed+1`, ..., `base_seed + trials - 1`. Aggregated outputs
+    land in `output/`.
+    """
+    from districtmaker.apportionment import districts_for_state
+
+    state = state.upper()
+    try:
+        districts_for_state(state)
+    except (KeyError, ValueError) as exc:
+        raise click.BadParameter(f"unknown state: {state}") from exc
+
+    algos = tuple(a.strip() for a in algorithms.split(",") if a.strip())
+    unknown = [a for a in algos if a not in ALGORITHM_NAMES]
+    if unknown:
+        raise click.BadParameter(f"unknown algorithm(s): {', '.join(unknown)}")
+
+    if cpu is None:
+        raise click.BadParameter("--cpu is required for multi-start (parallel mode)")
+
+    if trials < 1:
+        raise click.BadParameter("--trials must be >= 1")
+
+    output.mkdir(parents=True, exist_ok=True)
+
+    # Multi-start uses an ad-hoc graph, not an ExperimentPlan with finalize
+    # tasks. We still pass an (effectively informational) plan to
+    # run_experiment for compatibility — the real fan-out comes from
+    # the graph the helper attaches via graph_override.
+    plan = ExperimentPlan(states=(state,), algorithms=algos)
+
+    _run_multi_start_experiment(
+        plan=plan,
+        output_dir=output,
+        record_tier_run=False,
+        seed=base_seed,
+        full_artifacts=full_artifacts,
+        state=state,
+        algorithms=algos,
+        trials=trials,
+        initial_cpu_pct=cpu,
+        max_workers=max_workers,
+        poll_seconds=poll_seconds,
+        tolerance=tolerance,
+        force=force,
+    )
+
+    aggregate_results(
+        output_dir=output,
+        state=state,
+        algorithms=algos,
+        trials=trials,
+        base_seed=base_seed,
+    )
+
+    click.echo(f"multi-start complete. results in {output}/")
 
 
 # --- validate-ctl: mid-flight control over a running `validate --cpu` ----------
