@@ -49,6 +49,8 @@ The 44-state convergence study ([`convergence-2026-05-15.md`](convergence-2026-0
 
 **Recommendation.** Treat this as the higher-value follow-on to plain multi-start. Structural-option diversification first (cheap if the bindings expose it); iterated local search second.
 
+**ctype=RM probe (CA) — 2026-05-16.** Verified first that `pymetis.Options().ctype` is genuinely plumbed through to METIS (it is), then ran 20 `metis+kl` trials on CA at `ctype=RM` instead of the default `SHEM`. RM is meaningfully worse than SHEM, not just different: RM's best is 7794.58 km (+13.08% vs SHEM's 6893.38 km), mean +29.6%, std blows out from 3.87% to 35.32% with two pathological outliers above 13,000 km. RM does diversify the basin set (saturation continues past N=2 rather than locking at the SHEM floor) but diversifies into worse territory. The structural-diversification hypothesis is wounded but not killed — ctype was the supposedly highest-leverage METIS knob and yet didn't help, which lowers the prior on `iptype`/`rtype` probes and elevates iterated local search (Q12's second lever) as the more promising remaining path. SHEM stays the default; no promotion of `metis-rm+kl` to first-class. Full writeup at [`q12-ctype-ca-2026-05-16.md`](q12-ctype-ca-2026-05-16.md).
+
 ### 13. Parallelization
 
 **Question.** The overnight 44-state batch ran sequentially and left the machine largely idle. Should runs be parallelized?
