@@ -1,0 +1,6 @@
+state CA (California)
+algorithm metis+kl
+seed 47
+runtime_seconds 0.000
+status FAILED
+error base 'metis' failed: RuntimeError: METIS could not produce a partition within tolerance 0.0050; best achieved deviation was 0.0430. Try relaxing tolerance or using a different algorithm.

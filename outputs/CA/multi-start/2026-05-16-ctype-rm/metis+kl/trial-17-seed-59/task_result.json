@@ -1,0 +1,10 @@
+{
+  "name": "metis+kl",
+  "status": "ok",
+  "total_internal_boundary_km": 7872.852424893884,
+  "max_abs_deviation_pct": 0.4994331687592465,
+  "runtime_seconds": 203.77652583300005,
+  "refine_iterations": 172,
+  "refine_improvement_pct": 0.17118070847455025,
+  "error": null
+}

@@ -1,0 +1,21 @@
+{
+  "algorithm": "metis+kl",
+  "trials": 20,
+  "trials_ok": 19,
+  "trials_failed": 1,
+  "best": {
+    "trial_index": 11,
+    "seed": 53,
+    "boundary_km": 7794.584527412912,
+    "max_dev_pct": null,
+    "trial_dir": "trial-11-seed-53"
+  },
+  "distribution": {
+    "min": 7794.584527412912,
+    "max": 22760.670421813247,
+    "mean": 9643.670466642723,
+    "median": 8476.476751171002,
+    "std": 3406.2470186264736,
+    "std_pct": 35.32106401197157
+  }
+}

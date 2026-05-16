@@ -1,0 +1,185 @@
+=== Attempt 1 (2026-05-16 07:10 — interrupted by power loss at 07:21) ===
+2026-05-16 07:10:18,444 INFO Q12 ctype=RM experiment: state=CA trials=20 workers=6
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:24,177 INFO [CA/metis+kl] running…
+2026-05-16 07:10:55,253 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:14:31,373 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:14:41,294 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:15:51,753 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:16:03,722 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:17:09,259 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:18:34,495 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:19:30,556 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:20:19,232 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 07:21:11,661 INFO [CA/metis+kl] running…
+
+=== Attempt 2 (2026-05-16 09:10 — resume, ran 9 missing trials [3, 12-19]) ===
+2026-05-16 09:10:42,824 INFO Q12 ctype=RM experiment: state=CA trials=20 workers=6
+2026-05-16 09:10:42,825 INFO Dispatching trial indices: [3, 12, 13, 14, 15, 16, 17, 18, 19]
+2026-05-16 09:10:48,618 INFO [CA/metis+kl] running…
+2026-05-16 09:10:48,629 INFO [CA/metis+kl] running…
+2026-05-16 09:10:48,629 INFO [CA/metis+kl] running…
+2026-05-16 09:10:48,631 INFO [CA/metis+kl] running…
+2026-05-16 09:10:48,634 INFO [CA/metis+kl] running…
+2026-05-16 09:10:48,637 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 09:14:53,531 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 09:16:07,799 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 09:17:57,948 INFO [CA/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-16 10:53:08,897 INFO All trials done in 6146.1s
+2026-05-16 10:53:08,897 INFO trial-03-seed-45: ok
+2026-05-16 10:53:08,897 INFO trial-12-seed-54: ok
+2026-05-16 10:53:08,897 INFO trial-13-seed-55: ok
+2026-05-16 10:53:08,897 INFO trial-14-seed-56: ok
+2026-05-16 10:53:08,897 INFO trial-15-seed-57: ok
+2026-05-16 10:53:08,897 INFO trial-16-seed-58: ok
+2026-05-16 10:53:08,897 INFO trial-17-seed-59: ok
+2026-05-16 10:53:08,897 INFO trial-18-seed-60: ok
+2026-05-16 10:53:08,897 INFO trial-19-seed-61: ok
+2026-05-16 10:53:08,897 INFO Aggregating…
+{
+  "elapsed_seconds": 6146.084175040999,
+  "trials": [
+    {
+      "trial_index": 3,
+      "seed": 45,
+      "status": "ok"
+    },
+    {
+      "trial_index": 12,
+      "seed": 54,
+      "status": "ok"
+    },
+    {
+      "trial_index": 13,
+      "seed": 55,
+      "status": "ok"
+    },
+    {
+      "trial_index": 14,
+      "seed": 56,
+      "status": "ok"
+    },
+    {
+      "trial_index": 15,
+      "seed": 57,
+      "status": "ok"
+    },
+    {
+      "trial_index": 16,
+      "seed": 58,
+      "status": "ok"
+    },
+    {
+      "trial_index": 17,
+      "seed": 59,
+      "status": "ok"
+    },
+    {
+      "trial_index": 18,
+      "seed": 60,
+      "status": "ok"
+    },
+    {
+      "trial_index": 19,
+      "seed": 61,
+      "status": "ok"
+    }
+  ],
+  "best": {
+    "algorithm": "metis+kl",
+    "trials": 20,
+    "trials_ok": 19,
+    "trials_failed": 1,
+    "best": {
+      "trial_index": 11,
+      "seed": 53,
+      "boundary_km": 7794.584527412912,
+      "max_dev_pct": null,
+      "trial_dir": "trial-11-seed-53"
+    },
+    "distribution": {
+      "min": 7794.584527412912,
+      "max": 22760.670421813247,
+      "mean": 9643.670466642723,
+      "median": 8476.476751171002,
+      "std": 3406.2470186264736,
+      "std_pct": 35.32106401197157
+    }
+  }
+}

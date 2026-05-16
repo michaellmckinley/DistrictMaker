@@ -1,0 +1,10 @@
+{
+  "name": "metis+kl",
+  "status": "failed",
+  "total_internal_boundary_km": null,
+  "max_abs_deviation_pct": null,
+  "runtime_seconds": 0.0,
+  "refine_iterations": 0,
+  "refine_improvement_pct": 0.0,
+  "error": "base 'metis' failed: RuntimeError: METIS could not produce a partition within tolerance 0.0050; best achieved deviation was 0.0430. Try relaxing tolerance or using a different algorithm."
+}
