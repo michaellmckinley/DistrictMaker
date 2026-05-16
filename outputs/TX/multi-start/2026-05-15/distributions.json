@@ -1,0 +1,331 @@
+{
+  "state": "TX",
+  "trials_per_algorithm": 20,
+  "base_seed": 42,
+  "results": {
+    "metis+kl": [
+      {
+        "trial_index": 0,
+        "seed": 42,
+        "status": "ok",
+        "boundary_km": 8967.856258431075,
+        "max_dev_pct": null,
+        "runtime_s": 330.89046687600785
+      },
+      {
+        "trial_index": 1,
+        "seed": 43,
+        "status": "ok",
+        "boundary_km": 8297.955570407532,
+        "max_dev_pct": null,
+        "runtime_s": 268.2519978330092
+      },
+      {
+        "trial_index": 2,
+        "seed": 44,
+        "status": "ok",
+        "boundary_km": 7823.8093146475285,
+        "max_dev_pct": null,
+        "runtime_s": 225.73233508299745
+      },
+      {
+        "trial_index": 3,
+        "seed": 45,
+        "status": "ok",
+        "boundary_km": 7263.7864526997055,
+        "max_dev_pct": null,
+        "runtime_s": 213.74641254299786
+      },
+      {
+        "trial_index": 4,
+        "seed": 46,
+        "status": "ok",
+        "boundary_km": 7882.246944237723,
+        "max_dev_pct": null,
+        "runtime_s": 199.58253195800353
+      },
+      {
+        "trial_index": 5,
+        "seed": 47,
+        "status": "ok",
+        "boundary_km": 9116.543565631595,
+        "max_dev_pct": null,
+        "runtime_s": 660.9142177920003
+      },
+      {
+        "trial_index": 6,
+        "seed": 48,
+        "status": "ok",
+        "boundary_km": 8563.227640330068,
+        "max_dev_pct": null,
+        "runtime_s": 355.6560614579939
+      },
+      {
+        "trial_index": 7,
+        "seed": 49,
+        "status": "ok",
+        "boundary_km": 8891.732943954832,
+        "max_dev_pct": null,
+        "runtime_s": 314.1133227500104
+      },
+      {
+        "trial_index": 8,
+        "seed": 50,
+        "status": "ok",
+        "boundary_km": 8144.691479920011,
+        "max_dev_pct": null,
+        "runtime_s": 139.05891125000198
+      },
+      {
+        "trial_index": 9,
+        "seed": 51,
+        "status": "ok",
+        "boundary_km": 7896.855437914742,
+        "max_dev_pct": null,
+        "runtime_s": 220.00690245899023
+      },
+      {
+        "trial_index": 10,
+        "seed": 52,
+        "status": "ok",
+        "boundary_km": 8153.84897728219,
+        "max_dev_pct": null,
+        "runtime_s": 211.28415462498378
+      },
+      {
+        "trial_index": 11,
+        "seed": 53,
+        "status": "ok",
+        "boundary_km": 8846.577930755937,
+        "max_dev_pct": null,
+        "runtime_s": 179.1530439590133
+      },
+      {
+        "trial_index": 12,
+        "seed": 54,
+        "status": "ok",
+        "boundary_km": 7966.572209094407,
+        "max_dev_pct": null,
+        "runtime_s": 149.97088995800004
+      },
+      {
+        "trial_index": 13,
+        "seed": 55,
+        "status": "ok",
+        "boundary_km": 7616.822690003586,
+        "max_dev_pct": null,
+        "runtime_s": 234.84705658299208
+      },
+      {
+        "trial_index": 14,
+        "seed": 56,
+        "status": "ok",
+        "boundary_km": 7916.577343143014,
+        "max_dev_pct": null,
+        "runtime_s": 210.99961175098724
+      },
+      {
+        "trial_index": 15,
+        "seed": 57,
+        "status": "ok",
+        "boundary_km": 8350.949112289976,
+        "max_dev_pct": null,
+        "runtime_s": 231.5681117500062
+      },
+      {
+        "trial_index": 16,
+        "seed": 58,
+        "status": "ok",
+        "boundary_km": 9021.446983844895,
+        "max_dev_pct": null,
+        "runtime_s": 412.68394879200787
+      },
+      {
+        "trial_index": 17,
+        "seed": 59,
+        "status": "ok",
+        "boundary_km": 8647.862641279495,
+        "max_dev_pct": null,
+        "runtime_s": 251.9063150830043
+      },
+      {
+        "trial_index": 18,
+        "seed": 60,
+        "status": "ok",
+        "boundary_km": 8454.051404438598,
+        "max_dev_pct": null,
+        "runtime_s": 249.94571529200766
+      },
+      {
+        "trial_index": 19,
+        "seed": 61,
+        "status": "ok",
+        "boundary_km": 8281.61182756583,
+        "max_dev_pct": null,
+        "runtime_s": 468.5682004990085
+      }
+    ],
+    "splitline-realized+kl": [
+      {
+        "trial_index": 0,
+        "seed": 42,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5880.005860375008
+      },
+      {
+        "trial_index": 1,
+        "seed": 43,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5871.985548291996
+      },
+      {
+        "trial_index": 2,
+        "seed": 44,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5876.891278042007
+      },
+      {
+        "trial_index": 3,
+        "seed": 45,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5880.6143437499995
+      },
+      {
+        "trial_index": 4,
+        "seed": 46,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5883.977137708003
+      },
+      {
+        "trial_index": 5,
+        "seed": 47,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5856.777741958009
+      },
+      {
+        "trial_index": 6,
+        "seed": 48,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5885.003724708993
+      },
+      {
+        "trial_index": 7,
+        "seed": 49,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5888.601154709002
+      },
+      {
+        "trial_index": 8,
+        "seed": 50,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5894.355843625002
+      },
+      {
+        "trial_index": 9,
+        "seed": 51,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5897.439138375994
+      },
+      {
+        "trial_index": 10,
+        "seed": 52,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5854.539471249984
+      },
+      {
+        "trial_index": 11,
+        "seed": 53,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5877.502053416014
+      },
+      {
+        "trial_index": 12,
+        "seed": 54,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5886.041042207988
+      },
+      {
+        "trial_index": 13,
+        "seed": 55,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5852.700996667016
+      },
+      {
+        "trial_index": 14,
+        "seed": 56,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5843.488046999992
+      },
+      {
+        "trial_index": 15,
+        "seed": 57,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5812.593848165983
+      },
+      {
+        "trial_index": 16,
+        "seed": 58,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 5821.921312874998
+      },
+      {
+        "trial_index": 17,
+        "seed": 59,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 22123.084002334
+      },
+      {
+        "trial_index": 18,
+        "seed": 60,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 22109.963351209008
+      },
+      {
+        "trial_index": 19,
+        "seed": 61,
+        "status": "ok",
+        "boundary_km": 8323.944674147437,
+        "max_dev_pct": null,
+        "runtime_s": 22119.203565290998
+      }
+    ]
+  }
+}

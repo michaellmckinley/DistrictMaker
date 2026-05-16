@@ -1,0 +1,281 @@
+2026-05-15 14:16:13,338 INFO dispatched TX/metis+kl (pid 35912)
+2026-05-15 14:16:16,343 INFO dispatched TX/metis+kl (pid 35953)
+2026-05-15 14:16:19,049 INFO [TX/metis+kl] running…
+2026-05-15 14:16:19,348 INFO dispatched TX/metis+kl (pid 36067)
+2026-05-15 14:16:22,130 INFO [TX/metis+kl] running…
+2026-05-15 14:16:22,353 INFO dispatched TX/metis+kl (pid 36076)
+2026-05-15 14:16:25,188 INFO [TX/metis+kl] running…
+2026-05-15 14:16:25,359 INFO dispatched TX/metis+kl (pid 36114)
+2026-05-15 14:16:28,238 INFO [TX/metis+kl] running…
+2026-05-15 14:16:28,364 INFO dispatched TX/metis+kl (pid 36151)
+2026-05-15 14:16:31,303 INFO [TX/metis+kl] running…
+2026-05-15 14:16:31,370 INFO dispatched TX/metis+kl (pid 36229)
+2026-05-15 14:16:34,374 INFO dispatched TX/metis+kl (pid 36260)
+2026-05-15 14:16:34,579 INFO [TX/metis+kl] running…
+2026-05-15 14:16:37,381 INFO dispatched TX/metis+kl (pid 36279)
+2026-05-15 14:16:37,611 INFO [TX/metis+kl] running…
+2026-05-15 14:16:40,386 INFO dispatched TX/metis+kl (pid 36314)
+2026-05-15 14:16:40,624 INFO [TX/metis+kl] running…
+2026-05-15 14:16:43,392 INFO dispatched TX/metis+kl (pid 36319)
+2026-05-15 14:16:44,131 INFO [TX/metis+kl] running…
+2026-05-15 14:16:46,399 INFO dispatched TX/metis+kl (pid 36320)
+2026-05-15 14:16:47,660 INFO [TX/metis+kl] running…
+2026-05-15 14:16:49,423 INFO dispatched TX/metis+kl (pid 36323)
+2026-05-15 14:16:51,039 INFO [TX/metis+kl] running…
+2026-05-15 14:16:52,430 INFO dispatched TX/metis+kl (pid 36329)
+2026-05-15 14:16:55,437 INFO dispatched TX/metis+kl (pid 36369)
+2026-05-15 14:16:55,546 INFO [TX/metis+kl] running…
+2026-05-15 14:16:58,448 INFO dispatched TX/metis+kl (pid 36450)
+2026-05-15 14:16:59,462 INFO [TX/metis+kl] running…
+2026-05-15 14:17:01,454 INFO dispatched TX/metis+kl (pid 36527)
+2026-05-15 14:17:02,289 INFO [TX/metis+kl] running…
+2026-05-15 14:17:06,014 INFO [TX/metis+kl] running…
+2026-05-15 14:17:07,491 INFO dispatched TX/metis+kl (pid 36584)
+2026-05-15 14:17:09,373 INFO [TX/metis+kl] running…
+2026-05-15 14:17:10,501 INFO dispatched TX/metis+kl (pid 36589)
+2026-05-15 14:17:14,206 INFO [TX/metis+kl] running…
+2026-05-15 14:17:17,444 INFO [TX/metis+kl] running…
+2026-05-15 14:17:19,376 INFO [TX/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:20:17,705 INFO completed TX/metis+kl status=ok elapsed=219.1s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:20:43,779 INFO completed TX/metis+kl status=ok elapsed=232.7s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:05,570 INFO completed TX/metis+kl status=ok elapsed=279.1s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:10,061 INFO completed TX/metis+kl status=ok elapsed=262.4s
+2026-05-15 14:21:10,796 INFO dispatched TX/metis+kl (pid 36993)
+2026-05-15 14:21:13,802 INFO dispatched TX/splitline-realized+kl (pid 37000)
+2026-05-15 14:21:17,335 INFO [TX/metis+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:18,584 INFO completed TX/metis+kl status=ok elapsed=295.1s
+2026-05-15 14:21:20,187 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:21:22,813 INFO dispatched TX/splitline-realized+kl (pid 37011)
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:26,114 INFO completed TX/metis+kl status=ok elapsed=305.6s
+2026-05-15 14:21:29,220 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:21:32,122 INFO dispatched TX/splitline-realized+kl (pid 37024)
+2026-05-15 14:21:35,143 INFO dispatched TX/splitline-realized+kl (pid 37025)
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:37,386 INFO completed TX/metis+kl status=ok elapsed=292.7s
+2026-05-15 14:21:38,684 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:21:41,638 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:43,679 INFO completed TX/metis+kl status=ok elapsed=302.1s
+2026-05-15 14:21:50,155 INFO dispatched TX/splitline-realized+kl (pid 37036)
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:21:52,714 INFO completed TX/metis+kl status=ok elapsed=296.0s
+2026-05-15 14:21:53,162 INFO dispatched TX/splitline-realized+kl (pid 37041)
+2026-05-15 14:21:56,744 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:21:59,635 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:22:06,114 INFO completed TX/metis+kl status=ok elapsed=348.7s
+2026-05-15 14:22:11,175 INFO dispatched TX/splitline-realized+kl (pid 37053)
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:22:13,561 INFO completed TX/metis+kl status=ok elapsed=319.0s
+2026-05-15 14:22:14,182 INFO dispatched TX/splitline-realized+kl (pid 37055)
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:22:16,827 INFO completed TX/metis+kl status=ok elapsed=316.9s
+2026-05-15 14:22:17,710 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:22:20,512 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:22:23,192 INFO dispatched TX/splitline-realized+kl (pid 37068)
+2026-05-15 14:22:29,646 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:22:44,950 INFO completed TX/metis+kl status=ok elapsed=334.9s
+2026-05-15 14:22:45,130 INFO completed TX/metis+kl status=ok elapsed=332.8s
+2026-05-15 14:22:50,210 INFO dispatched TX/splitline-realized+kl (pid 37080)
+2026-05-15 14:22:53,217 INFO dispatched TX/splitline-realized+kl (pid 37084)
+2026-05-15 14:22:56,840 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:23:00,195 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:23:05,017 INFO completed TX/metis+kl status=ok elapsed=410.6s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:23:09,497 INFO completed TX/metis+kl status=ok elapsed=394.0s
+2026-05-15 14:23:11,236 INFO dispatched TX/splitline-realized+kl (pid 37126)
+2026-05-15 14:23:14,243 INFO dispatched TX/splitline-realized+kl (pid 37127)
+2026-05-15 14:23:17,953 INFO [TX/splitline-realized+kl] running…
+2026-05-15 14:23:21,211 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:23:50,207 INFO completed TX/metis+kl status=ok elapsed=437.6s
+2026-05-15 14:24:02,292 INFO dispatched TX/splitline-realized+kl (pid 37159)
+2026-05-15 14:24:09,126 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:25:24,229 INFO completed TX/metis+kl status=ok elapsed=501.2s
+2026-05-15 14:25:56,382 INFO dispatched TX/splitline-realized+kl (pid 37198)
+2026-05-15 14:26:03,264 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:28:50,018 INFO completed TX/metis+kl status=ok elapsed=740.4s
+2026-05-15 14:29:02,481 INFO dispatched TX/splitline-realized+kl (pid 37269)
+2026-05-15 14:29:09,107 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 14:30:22,166 INFO completed TX/metis+kl status=ok elapsed=550.1s
+2026-05-15 14:30:35,534 INFO dispatched TX/splitline-realized+kl (pid 37306)
+2026-05-15 14:30:42,024 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+2026-05-15 16:00:33,998 INFO completed TX/splitline-realized+kl status=ok elapsed=5959.1s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:00:34,752 INFO completed TX/splitline-realized+kl status=ok elapsed=5950.8s
+2026-05-15 16:00:38,670 INFO dispatched TX/splitline-realized+kl (pid 42460)
+2026-05-15 16:00:41,678 INFO dispatched TX/splitline-realized+kl (pid 42461)
+2026-05-15 16:00:45,327 INFO [TX/splitline-realized+kl] running…
+2026-05-15 16:00:48,182 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:00:49,510 INFO completed TX/splitline-realized+kl status=ok elapsed=5956.2s
+2026-05-15 16:00:50,186 INFO completed TX/splitline-realized+kl status=ok elapsed=5935.8s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:00:56,019 INFO completed TX/splitline-realized+kl status=ok elapsed=5959.6s
+2026-05-15 16:00:56,695 INFO dispatched TX/splitline-realized+kl (pid 42472)
+2026-05-15 16:01:02,802 INFO [TX/splitline-realized+kl] running…
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:01:14,594 INFO completed TX/splitline-realized+kl status=ok elapsed=5963.3s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:01:37,237 INFO completed TX/splitline-realized+kl status=ok elapsed=5964.8s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:01:43,222 INFO completed TX/splitline-realized+kl status=ok elapsed=5967.8s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:01:48,996 INFO completed TX/splitline-realized+kl status=ok elapsed=5934.5s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:01:57,855 INFO completed TX/splitline-realized+kl status=ok elapsed=5973.4s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:02:27,686 INFO completed TX/splitline-realized+kl status=ok elapsed=5976.3s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:02:28,958 INFO completed TX/splitline-realized+kl status=ok elapsed=5956.5s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:02:40,731 INFO completed TX/splitline-realized+kl status=ok elapsed=5965.3s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:02:53,814 INFO completed TX/splitline-realized+kl status=ok elapsed=5930.3s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:04:37,633 INFO completed TX/splitline-realized+kl status=ok elapsed=5920.0s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:07:11,034 INFO completed TX/splitline-realized+kl status=ok elapsed=5887.3s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 16:08:54,068 INFO completed TX/splitline-realized+kl status=ok elapsed=5897.2s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 22:10:26,974 INFO completed TX/splitline-realized+kl status=ok elapsed=22184.1s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 22:10:36,938 INFO completed TX/splitline-realized+kl status=ok elapsed=22196.9s
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/src/districtmaker/output/writer.py:84: UserWarning: Column names longer than 10 characters will be truncated when saved to ESRI Shapefile.
+  districts.to_file(shp, driver="ESRI Shapefile")
+/Users/michaelmckinley/Projects/DistrictMaker/DistrictMaker/.venv/lib/python3.11/site-packages/pyogrio/raw.py:733: RuntimeWarning: Normalized/laundered field name: 'district_id' to 'district_i'
+  ogr_write(
+2026-05-15 22:10:50,612 INFO completed TX/splitline-realized+kl status=ok elapsed=22192.9s
+multi-start complete. results in outputs/_multi-start/2026-05-15-TX/

@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-15T19:21:42.422099+00:00
+state TX (Texas)
+algorithm metis+kl
+districts 38
+seed 51
+runtime_seconds 220.007
+git_commit 4712833
+max_abs_deviation_pct 0.499882
+total_internal_boundary_km 7896.855438

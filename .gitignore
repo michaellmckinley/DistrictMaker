@@ -45,6 +45,19 @@ outputs/*/experiments/*/districts.dbf
 outputs/*/experiments/*/districts.prj
 outputs/*/experiments/*/districts.cpg
 
+# Multi-start per-trial shapefile/geojson are also local-only — same
+# rationale as the per-experiment rule above, just with the extra
+# trial-NN-seed-X path layer. The trial's metrics.json, run.log, png,
+# and task_result.json are small and stay tracked; the aggregates
+# (_summary.md, distributions.json, best.json, _validate.log,
+# _telemetry.csv) live one level up and are tracked.
+outputs/*/multi-start/*/*/trial-*/districts.geojson
+outputs/*/multi-start/*/*/trial-*/districts.shp
+outputs/*/multi-start/*/*/trial-*/districts.shx
+outputs/*/multi-start/*/*/trial-*/districts.dbf
+outputs/*/multi-start/*/*/trial-*/districts.prj
+outputs/*/multi-start/*/*/trial-*/districts.cpg
+
 # Brainstorming specs are working-tree scratchpads; plans (sibling dir)
 # are committed, specs are not. See memory: feedback-no-spec-in-repo.
 docs/superpowers/specs/

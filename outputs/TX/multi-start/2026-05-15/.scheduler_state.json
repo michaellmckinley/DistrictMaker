@@ -1,0 +1,9 @@
+{
+  "target_cpu_pct": 75.0,
+  "max_workers": null,
+  "paused": false,
+  "freeze": false,
+  "pid": 35876,
+  "started_at": "2026-05-15T19:16:13.323793+00:00",
+  "version": 2
+}
