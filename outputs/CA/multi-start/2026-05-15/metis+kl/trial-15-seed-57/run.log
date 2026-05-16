@@ -1,0 +1,11 @@
+districtmaker 0.1.0
+python 3.11.11
+generated_at 2026-05-16T04:11:22.178035+00:00
+state CA (California)
+algorithm metis+kl
+districts 52
+seed 57
+runtime_seconds 232.749
+git_commit 451b955
+max_abs_deviation_pct 0.499711
+total_internal_boundary_km 7105.551627

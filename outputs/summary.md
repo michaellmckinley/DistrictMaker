@@ -44,7 +44,7 @@
 | middle | SC | ok | metis+kl | 1199.63 | metis | +0.20% | 514.2 |
 | middle | VA | ok | metis+kl | 1598.54 | metis | +0.01% | 851.8 |
 | middle | WA | ok | splitline-realized+kl | 2041.22 | annealing-from-kl | +0.00% | 807.7 |
-| tough | CA | ok | splitline-realized+kl | 7323.70 | annealing-from-kl | +0.00% | 6860.0 |
+| tough | CA | ok | metis+kl | 6893.38 | splitline-realized+kl | +6.24% | 7680.0 |
 | tough | FL | ok | metis+kl | 3554.87 | metis | +0.45% | 3314.1 |
 | tough | IL | ok | metis+kl | 2054.19 | metis | +0.06% | 2168.6 |
 | tough | MI | ok | metis+kl | 2119.46 | metis | +0.04% | 1312.1 |
@@ -52,7 +52,7 @@
 | tough | NY | ok | metis+kl | 2207.02 | metis | +0.22% | 2144.9 |
 | tough | OH | ok | metis+kl | 2186.94 | metis | +0.09% | 1611.8 |
 | tough | PA | ok | metis+kl | 2290.42 | metis | +0.03% | 2243.3 |
-| tough | TX | ok | splitline-realized+kl | 8323.94 | annealing-from-kl | +0.00% | 9758.6 |
+| tough | TX | ok | metis+kl | 7263.79 | splitline-realized+kl | +14.60% | 28500.0 |
 
 ## Run history
 

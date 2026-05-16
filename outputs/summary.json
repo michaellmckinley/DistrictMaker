@@ -44,13 +44,14 @@
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "elapsed_seconds": 6860.002881041997,
-      "leader": "splitline-realized+kl",
-      "leader_boundary_km": 7323.702402992173,
-      "runner_up": "annealing-from-kl",
-      "gap_to_runner_up_pct": 0.0,
+      "elapsed_seconds": 7680.0,
+      "leader": "metis+kl",
+      "leader_boundary_km": 6893.379595159918,
+      "runner_up": "splitline-realized+kl",
+      "gap_to_runner_up_pct": 6.242562265290089,
       "experiments_ok": 6,
-      "experiments_failed": 1
+      "experiments_failed": 1,
+      "leader_source": "multi-start/2026-05-15 (metis+kl seed 43, best of 19/20 trials)"
     },
     "CO": {
       "state_code": "CO",
@@ -499,13 +500,14 @@
       "status": "ok",
       "error": null,
       "tier": "tough",
-      "elapsed_seconds": 9758.629307582996,
-      "leader": "splitline-realized+kl",
-      "leader_boundary_km": 8323.944674147437,
-      "runner_up": "annealing-from-kl",
-      "gap_to_runner_up_pct": 0.0,
+      "elapsed_seconds": 28500.0,
+      "leader": "metis+kl",
+      "leader_boundary_km": 7263.7864526997055,
+      "runner_up": "splitline-realized+kl",
+      "gap_to_runner_up_pct": 14.595118239657307,
       "experiments_ok": 6,
-      "experiments_failed": 1
+      "experiments_failed": 1,
+      "leader_source": "multi-start/2026-05-15 (metis+kl seed 45, best of 20 trials)"
     },
     "UT": {
       "state_code": "UT",

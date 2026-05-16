@@ -7,25 +7,43 @@
     "block_count": 519723,
     "total_population": 39538223
   },
-  "leader": "splitline-realized+kl",
+  "leader": "metis+kl",
   "criterion": "shortest realized internal boundary; ties broken by lower max population deviation",
-  "generated_at": "2026-05-15T03:56:15.083805+00:00",
-  "trials_per_experiment": 1,
+  "generated_at": "2026-05-16T06:30:00.000000+00:00",
+  "trials_per_experiment": "varies — see per-row 'trials' field",
   "ranking": [
     {
       "rank": 1,
+      "experiment": "metis+kl",
+      "status": "ok",
+      "total_internal_boundary_km": 6893.379595159918,
+      "max_abs_deviation_pct": 0.4995798622512772,
+      "runtime_seconds": 172.27859858397278,
+      "refine_iterations": 115,
+      "refine_improvement_pct": 0.10712908365130015,
+      "gap_to_leader_pct": 0.0,
+      "error": null,
+      "trials": 20,
+      "best_seed": 43,
+      "best_trial_index": 1
+    },
+    {
+      "rank": 2,
       "experiment": "splitline-realized+kl",
       "status": "ok",
       "total_internal_boundary_km": 7323.702402992173,
       "max_abs_deviation_pct": 0.4983961975225918,
-      "runtime_seconds": 2921.8147892089983,
+      "runtime_seconds": 4145.617965792015,
       "refine_iterations": 2951,
       "refine_improvement_pct": 14.048684951943912,
-      "gap_to_leader_pct": 0.0,
-      "error": null
+      "gap_to_leader_pct": 6.242562265290089,
+      "error": null,
+      "trials": 20,
+      "best_seed": 42,
+      "best_trial_index": 0
     },
     {
-      "rank": 2,
+      "rank": 3,
       "experiment": "annealing-from-kl",
       "status": "ok",
       "total_internal_boundary_km": 7323.702402992173,
@@ -33,20 +51,9 @@
       "runtime_seconds": 2966.832007124998,
       "refine_iterations": 0,
       "refine_improvement_pct": 0.0,
-      "gap_to_leader_pct": 0.0,
-      "error": null
-    },
-    {
-      "rank": 3,
-      "experiment": "metis+kl",
-      "status": "ok",
-      "total_internal_boundary_km": 7467.959417623575,
-      "max_abs_deviation_pct": 0.4997113805544645,
-      "runtime_seconds": 122.54031833399495,
-      "refine_iterations": 99,
-      "refine_improvement_pct": 0.06539119047836989,
-      "gap_to_leader_pct": 1.9697279694552345,
-      "error": null
+      "gap_to_leader_pct": 6.242562265290089,
+      "error": null,
+      "trials": 1
     },
     {
       "rank": 4,
@@ -57,8 +64,9 @@
       "runtime_seconds": 62.31763095899805,
       "refine_iterations": 0,
       "refine_improvement_pct": 0.0,
-      "gap_to_leader_pct": 2.0364508193678437,
-      "error": null
+      "gap_to_leader_pct": 8.406331708807395,
+      "error": null,
+      "trials": 1
     },
     {
       "rank": 5,
@@ -69,8 +77,9 @@
       "runtime_seconds": 711.4352607500041,
       "refine_iterations": 0,
       "refine_improvement_pct": 0.0,
-      "gap_to_leader_pct": 16.342090360427214,
-      "error": null
+      "gap_to_leader_pct": 23.604677928167104,
+      "error": null,
+      "trials": 1
     },
     {
       "rank": 6,
@@ -81,8 +90,9 @@
       "runtime_seconds": 646.0838999999978,
       "refine_iterations": 0,
       "refine_improvement_pct": 0.0,
-      "gap_to_leader_pct": 16.34493311020207,
-      "error": null
+      "gap_to_leader_pct": 23.60769761144586,
+      "error": null,
+      "trials": 1
     },
     {
       "rank": null,
@@ -94,7 +104,10 @@
       "refine_iterations": 0,
       "refine_improvement_pct": 0.0,
       "gap_to_leader_pct": null,
-      "error": "RuntimeError: No valid cut found \u2014 region may be degenerate or angle resolution too coarse"
+      "error": "RuntimeError: No valid cut found — region may be degenerate or angle resolution too coarse",
+      "trials": 1
     }
-  ]
+  ],
+  "multi_start_source": "multi-start/2026-05-15/",
+  "multi_start_writeup": "../../docs/multi-start-ca-2026-05-15.md"
 }

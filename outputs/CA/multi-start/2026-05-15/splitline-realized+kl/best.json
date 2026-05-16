@@ -1,0 +1,21 @@
+{
+  "algorithm": "splitline-realized+kl",
+  "trials": 20,
+  "trials_ok": 20,
+  "trials_failed": 0,
+  "best": {
+    "trial_index": 0,
+    "seed": 42,
+    "boundary_km": 7323.702402992173,
+    "max_dev_pct": null,
+    "trial_dir": "trial-00-seed-42"
+  },
+  "distribution": {
+    "min": 7323.702402992173,
+    "max": 7323.702402992173,
+    "mean": 7323.702402992173,
+    "median": 7323.702402992173,
+    "std": 0.0,
+    "std_pct": 0.0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "splitline-realized+kl",
+  "status": "ok",
+  "total_internal_boundary_km": 7323.702402992173,
+  "max_abs_deviation_pct": 0.4983961975225918,
+  "runtime_seconds": 4147.9248157079855,
+  "refine_iterations": 2951,
+  "refine_improvement_pct": 14.048684951943912,
+  "error": null
+}

@@ -23,4 +23,4 @@
 
 The 2026-05-15 single-trial sweep had `splitline-realized+kl` at the top (8323.94 km) with `metis+kl` in 3rd at +7.74%. The 20-trial multi-start experiment on the same day reversed this: 11 of 20 `metis+kl` trials strictly beat the `splitline-realized+kl` value, and the best `metis+kl` trial (seed 45) lands 12.74% better than the single-trial `splitline-realized+kl` result. The state-root bundle (`districts.*`) is from that best trial.
 
-The cross-state ledger at `outputs/summary.md` has not been updated for this reversal — it still reflects the single-trial picture. That ledger's format question (single value vs. distribution) is unresolved; see `docs/open-questions.md` Q15 and Q14.
+The cross-state ledger at `outputs/summary.md` has been updated to carry this multi-start leader; the `leader_source` field in `summary.json` flags this row (and CA's) as multi-start rather than single-trial. The mix of single-trial and multi-start rows within one ledger and the broader format question (single value vs. distribution per row) is unresolved; see `docs/open-questions.md` Q14.

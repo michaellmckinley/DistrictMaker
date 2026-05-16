@@ -1,0 +1,331 @@
+{
+  "state": "CA",
+  "trials_per_algorithm": 20,
+  "base_seed": 42,
+  "results": {
+    "metis+kl": [
+      {
+        "trial_index": 0,
+        "seed": 42,
+        "status": "ok",
+        "boundary_km": 7467.959417623575,
+        "max_dev_pct": null,
+        "runtime_s": 156.51566337500117
+      },
+      {
+        "trial_index": 1,
+        "seed": 43,
+        "status": "ok",
+        "boundary_km": 6893.379595159918,
+        "max_dev_pct": null,
+        "runtime_s": 172.27859858397278
+      },
+      {
+        "trial_index": 2,
+        "seed": 44,
+        "status": "ok",
+        "boundary_km": 7353.03466836898,
+        "max_dev_pct": null,
+        "runtime_s": 172.7773560420028
+      },
+      {
+        "trial_index": 3,
+        "seed": 45,
+        "status": "ok",
+        "boundary_km": 7395.803303859519,
+        "max_dev_pct": null,
+        "runtime_s": 131.13950920797652
+      },
+      {
+        "trial_index": 4,
+        "seed": 46,
+        "status": "missing",
+        "boundary_km": null,
+        "max_dev_pct": null,
+        "runtime_s": null
+      },
+      {
+        "trial_index": 5,
+        "seed": 47,
+        "status": "ok",
+        "boundary_km": 7576.082343373428,
+        "max_dev_pct": null,
+        "runtime_s": 193.25091866700677
+      },
+      {
+        "trial_index": 6,
+        "seed": 48,
+        "status": "ok",
+        "boundary_km": 7500.4928134772745,
+        "max_dev_pct": null,
+        "runtime_s": 259.0346589999972
+      },
+      {
+        "trial_index": 7,
+        "seed": 49,
+        "status": "ok",
+        "boundary_km": 7860.602427922113,
+        "max_dev_pct": null,
+        "runtime_s": 165.24374700000044
+      },
+      {
+        "trial_index": 8,
+        "seed": 50,
+        "status": "ok",
+        "boundary_km": 7480.847819237262,
+        "max_dev_pct": null,
+        "runtime_s": 189.0755566659791
+      },
+      {
+        "trial_index": 9,
+        "seed": 51,
+        "status": "ok",
+        "boundary_km": 7349.346121670008,
+        "max_dev_pct": null,
+        "runtime_s": 208.10870354101644
+      },
+      {
+        "trial_index": 10,
+        "seed": 52,
+        "status": "ok",
+        "boundary_km": 7946.901869519421,
+        "max_dev_pct": null,
+        "runtime_s": 243.17674537500716
+      },
+      {
+        "trial_index": 11,
+        "seed": 53,
+        "status": "ok",
+        "boundary_km": 7128.7239392260035,
+        "max_dev_pct": null,
+        "runtime_s": 150.28196445901995
+      },
+      {
+        "trial_index": 12,
+        "seed": 54,
+        "status": "ok",
+        "boundary_km": 7113.379228496205,
+        "max_dev_pct": null,
+        "runtime_s": 192.1368622489972
+      },
+      {
+        "trial_index": 13,
+        "seed": 55,
+        "status": "ok",
+        "boundary_km": 7318.131807821062,
+        "max_dev_pct": null,
+        "runtime_s": 167.41337512500468
+      },
+      {
+        "trial_index": 14,
+        "seed": 56,
+        "status": "ok",
+        "boundary_km": 7388.416649910274,
+        "max_dev_pct": null,
+        "runtime_s": 163.93580962502165
+      },
+      {
+        "trial_index": 15,
+        "seed": 57,
+        "status": "ok",
+        "boundary_km": 7105.551626840734,
+        "max_dev_pct": null,
+        "runtime_s": 232.748700000986
+      },
+      {
+        "trial_index": 16,
+        "seed": 58,
+        "status": "ok",
+        "boundary_km": 7812.652887662464,
+        "max_dev_pct": null,
+        "runtime_s": 178.8842731260229
+      },
+      {
+        "trial_index": 17,
+        "seed": 59,
+        "status": "ok",
+        "boundary_km": 7284.900654147867,
+        "max_dev_pct": null,
+        "runtime_s": 293.3502497500158
+      },
+      {
+        "trial_index": 18,
+        "seed": 60,
+        "status": "ok",
+        "boundary_km": 7516.852280569514,
+        "max_dev_pct": null,
+        "runtime_s": 189.3375541669957
+      },
+      {
+        "trial_index": 19,
+        "seed": 61,
+        "status": "ok",
+        "boundary_km": 7901.868729046083,
+        "max_dev_pct": null,
+        "runtime_s": 206.72086075000698
+      }
+    ],
+    "splitline-realized+kl": [
+      {
+        "trial_index": 0,
+        "seed": 42,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4145.617965792015
+      },
+      {
+        "trial_index": 1,
+        "seed": 43,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4154.679574917012
+      },
+      {
+        "trial_index": 2,
+        "seed": 44,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4134.049032500014
+      },
+      {
+        "trial_index": 3,
+        "seed": 45,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4130.686920334032
+      },
+      {
+        "trial_index": 4,
+        "seed": 46,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4148.913887082977
+      },
+      {
+        "trial_index": 5,
+        "seed": 47,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4155.090603124991
+      },
+      {
+        "trial_index": 6,
+        "seed": 48,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4162.977328542009
+      },
+      {
+        "trial_index": 7,
+        "seed": 49,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4152.384171416983
+      },
+      {
+        "trial_index": 8,
+        "seed": 50,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4138.387329541991
+      },
+      {
+        "trial_index": 9,
+        "seed": 51,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4175.0127115830255
+      },
+      {
+        "trial_index": 10,
+        "seed": 52,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4162.239168208005
+      },
+      {
+        "trial_index": 11,
+        "seed": 53,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4151.291331500019
+      },
+      {
+        "trial_index": 12,
+        "seed": 54,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4134.632565290987
+      },
+      {
+        "trial_index": 13,
+        "seed": 55,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4148.834863541997
+      },
+      {
+        "trial_index": 14,
+        "seed": 56,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4147.9248157079855
+      },
+      {
+        "trial_index": 15,
+        "seed": 57,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4145.020694250037
+      },
+      {
+        "trial_index": 16,
+        "seed": 58,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4155.559077417012
+      },
+      {
+        "trial_index": 17,
+        "seed": 59,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 4100.940304166987
+      },
+      {
+        "trial_index": 18,
+        "seed": 60,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 3099.2465318759787
+      },
+      {
+        "trial_index": 19,
+        "seed": 61,
+        "status": "ok",
+        "boundary_km": 7323.702402992173,
+        "max_dev_pct": null,
+        "runtime_s": 3090.24907000002
+      }
+    ]
+  }
+}
