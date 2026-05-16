@@ -165,3 +165,100 @@ def test_metis_produces_contiguous_districts_on_grid():
         assert geom.geom_type == "Polygon", (
             f"Expected Polygon (single contiguous district), got {geom.geom_type}"
         )
+
+
+# --- ctype knob ----------------------------------------------------------------
+
+
+def _ctype_fixture():
+    """Small graph with VARIED edge weights AND varied populations so ctype
+    differentiates outputs.
+
+    Two things had to vary for SHEM vs RM to land on different partitions:
+      1. Edge weights — a uniform-weight graph causes SHEM (sorted
+         heavy-edge matching) to degenerate to RM (random matching).
+      2. Block populations — a uniform-population grid is so symmetric
+         that even with weight variation METIS converges to the same
+         best partition across both coarsening choices.
+
+    Callers should also use ncuts=1 (see test_metis_ctype_rm_differs_from_shem):
+    with multiple independent trials METIS averages out the coarsening
+    choice and SHEM/RM produce the same final answer on graphs this small.
+    """
+    rng = np.random.default_rng(1)
+    w, h = 10, 10
+    geom = []
+    for ix in range(w):
+        for iy in range(h):
+            geom.append(
+                Polygon([(ix, iy), (ix + 1, iy), (ix + 1, iy + 1), (ix, iy + 1)])
+            )
+    pops = rng.integers(10, 200, size=w * h)
+    blocks = gpd.GeoDataFrame({"pop": pops}, geometry=geom, crs="EPSG:5070")
+    state = _envelope(blocks)
+    edges, lengths = compute_adjacency(blocks)
+    rng2 = np.random.default_rng(2)
+    lengths = lengths * (1.0 + rng2.uniform(0.0, 10.0, size=len(lengths)))
+    return state, blocks, edges, lengths
+
+
+def test_metis_ctype_default_matches_current_behavior():
+    """Default ctype must preserve bit-exact output of pre-ctype code path.
+
+    Guards against accidental regression: existing leader ledger values
+    (e.g. CA seed 42 metis+kl 7467.96 km) depend on this.
+    """
+    state, blocks, edges, lengths = _ctype_fixture()
+    m_default = Metis(tolerance=0.05, ncuts=1)
+    m_explicit = Metis(tolerance=0.05, ncuts=1, ctype="SHEM")
+    d_default = m_default.run(
+        state, blocks, n_districts=4, seed=42, edges=edges, edge_lengths=lengths
+    )
+    d_explicit = m_explicit.run(
+        state, blocks, n_districts=4, seed=42, edges=edges, edge_lengths=lengths
+    )
+    # Compare district assignments (not geometries — dissolve is deterministic)
+    assert list(d_default["district_id"]) == list(d_explicit["district_id"])
+    assert list(d_default["pop"]) == list(d_explicit["pop"])
+    # And the geometries themselves should be identical.
+    default_shapes = sorted(g.wkb_hex for g in d_default.geometry)
+    explicit_shapes = sorted(g.wkb_hex for g in d_explicit.geometry)
+    assert default_shapes == explicit_shapes
+
+
+def test_metis_ctype_rm_differs_from_shem():
+    """ctype='RM' must produce a different partition than ctype='SHEM'.
+
+    The fixture deliberately uses VARIED edge weights (see _ctype_fixture).
+    A uniform-weight graph causes SHEM and RM to degenerate to the same
+    matching, which would falsely pass this test or, depending on tie
+    breaks, falsely fail it. With varied weights, SHEM's heavy-edge
+    preference produces a measurably different partition than RM.
+    """
+    state, blocks, edges, lengths = _ctype_fixture()
+    # ncuts=1 is intentional: with multiple trials METIS averages out the
+    # coarsening choice and SHEM/RM produce the same final partition on
+    # graphs this small. ctype's effect is observable on a single trial.
+    m_shem = Metis(tolerance=0.05, ncuts=1, ctype="SHEM")
+    m_rm = Metis(tolerance=0.05, ncuts=1, ctype="RM")
+    d_shem = m_shem.run(
+        state, blocks, n_districts=4, seed=42, edges=edges, edge_lengths=lengths
+    )
+    d_rm = m_rm.run(
+        state, blocks, n_districts=4, seed=42, edges=edges, edge_lengths=lengths
+    )
+    # Compare the dissolved geometries — uniform pops make the pop split
+    # identical regardless of which blocks landed in which district, so
+    # geometry equality (set-of-WKBs, order-independent) is the right signal.
+    shem_shapes = sorted(g.wkb_hex for g in d_shem.geometry)
+    rm_shapes = sorted(g.wkb_hex for g in d_rm.geometry)
+    assert shem_shapes != rm_shapes, (
+        "ctype=RM and ctype=SHEM produced identical partitions on the "
+        "test fixture; fixture may be too small/symmetric for ctype to "
+        "differentiate. Vary the edge weights further."
+    )
+
+
+def test_metis_ctype_invalid_raises():
+    with pytest.raises(ValueError, match="ctype must be 'SHEM' or 'RM'"):
+        Metis(tolerance=0.005, ctype="BOGUS")

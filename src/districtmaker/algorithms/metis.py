@@ -32,6 +32,7 @@ class Metis:
         recursive: bool = False,
         ncuts: int = 10,
         niter: int = 50,
+        ctype: str = "SHEM",
     ):
         """tolerance is the max-abs population deviation as a fraction (0.005 = 0.5%).
 
@@ -44,6 +45,10 @@ class Metis:
         partitionings and keeps the best. `niter` controls how many KL/FM
         refinement passes per trial. Higher = better quality at the cost of
         runtime.
+
+        `ctype` selects METIS's coarsening type: 'SHEM' (sorted heavy-edge
+        matching, METIS default) or 'RM' (random matching, broader basin
+        coverage). Default 'SHEM' reproduces pre-ctype behavior bit-exactly.
         """
         if tolerance <= 0:
             raise ValueError("tolerance must be positive")
@@ -52,11 +57,14 @@ class Metis:
                 "METIS contig=True is only honored by the k-way partitioner; "
                 "set recursive=False or contiguous=False"
             )
+        if ctype not in ("SHEM", "RM"):
+            raise ValueError(f"ctype must be 'SHEM' or 'RM', got {ctype!r}")
         self.tolerance = tolerance
         self.contiguous = contiguous
         self.recursive = recursive
         self.ncuts = ncuts
         self.niter = niter
+        self.ctype = ctype
 
     def run(
         self,
@@ -93,6 +101,7 @@ class Metis:
             options.ufactor = ufactor
             options.ncuts = self.ncuts
             options.niter = self.niter
+            options.ctype = 1 if self.ctype == "SHEM" else 0  # METIS_CTYPE_SHEM=1, RM=0
             if self.contiguous:
                 options.contig = 1
 
